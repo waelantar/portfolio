@@ -1,6 +1,6 @@
 # Security policy and release gate
 
-**Status:** planning controls. This repository has a local static scaffold but no externally deployed site, API, monitor or security certification yet. Security claims on the eventual portfolio must link to implemented controls and test evidence.
+**Status:** PF-026 threat model reviewed against the current static source and a clean local build on 20 October 2026. Claim validation and a heuristic publication guard are implemented. CI, deployed response headers, backup hosting, monitoring and live-agent controls remain planned. There is no externally deployed site, API or security certification.
 
 ## Assets and trust boundaries
 
@@ -12,10 +12,47 @@
 | Visitor experience | V1 serves static pages and genuine replay data; no visitor prompt storage or public agent API. | XSS, broken proof links, fabricated execution or dependence on an unstable model. |
 | Future live assistant | Public input, model output and retrieved evidence are untrusted. | Prompt injection, unauthorized tool use, data exfiltration, unbounded cost or unsafe answer. |
 
+## PF-026 data classification and publication boundary
+
+The public Git repository is itself a publication surface. A claim can be absent from the rendered page yet still be readable in source, pull-request diffs and Git history. Approval for display and approval to store text in this repository are therefore separate checks.
+
+| Class | Examples | Allowed destination and rule |
+| --- | --- | --- |
+| Reviewed public | Approved statements, scopes, public source links, original diagrams and the current placeholder portrait. | May enter tracked source and static output after evidence, wording and asset review. A direct link proves context only when the linked source actually supports the sentence. |
+| Public intake metadata | Claim review state, provenance labels and editorial notes already committed to the public registry. | Treat as public text even when the website selects only statement and scope. Never put a confidential quotation or private identifier in a held or draft entry. |
+| Restricted original | Employer/customer records, contracts, compensation, internal metrics, screenshots, personal records and private workspaces. | Stay outside this repository, Git history, CI, build inputs, fixtures, previews and generated artifacts. Only a separately approved privacy-safe summary may cross the boundary. |
+| Secret or operator-only | Model credentials, deploy tokens, recovery access, raw provider errors and future restricted diagnostics. | No browser bundle, public repository, public PR log, static host or trace. A later runtime needs a separate secret and logging review. |
+| Visitor-local | The current light/dark theme preference. | Stored as one local browser preference; no account, form, analytics or visitor prompt is implemented. Future visitor input requires a new threat review. |
+| Trace pending review | Future agent events, evidence text, citations and timings. | No trace is public today. Only genuine evaluated, redacted and approved trace data may enter the V1 static replay. |
+
+### Current trust transitions
+
+1. A human verifies source and privacy-safe wording before adding a claim to the public registry. The validator checks structure, approved state, provenance label, dates and HTTPS link syntax; it cannot decide whether the sentence is true or the destination is trustworthy.
+2. The app selects approved claim fields for static rendering. React text rendering escapes content. The current source contains no raw HTML insertion, browser fetch, public API route, runtime provider call or environment-variable read. These observations describe this revision, not a permanent guarantee.
+3. Next.js builds static HTML, JavaScript and assets. The entire output, metadata and source history are treated as public. The current theme script reads a fixed localStorage key and does not send it to a service.
+4. A future evaluated agent is a separate trust domain: public evidence, retrieved text and model output remain untrusted data. The V1 site must retain its approved static reading path when no model is available.
+
+### Threat scenarios and gates
+
+| Entry or actor | Failure path | Current control and remaining gate |
+| --- | --- | --- |
+| Accidental editor or malicious source | Confidential text or an inflated claim is placed in registry prose, notes, media or metadata. | Human source/wording approval and reviewed PR; typed validator and heuristic guard help catch mistakes. PF-027 must test source and artifact scans. PF-033/034 must test future JSON, CV and search surfaces. |
+| Contributor with a syntactically valid HTTPS link | An approved-looking claim links to irrelevant, changed or hostile content. | HTTPS validation blocks unsafe schemes; evidence relevance and destination still require human review before merge and periodic link checks after release. |
+| Untrusted text rendered on a page | Script execution or unsafe navigation from claim text or future imported evidence. | Current React text output is escaped and no raw HTML insertion exists. PF-027 must test unsafe rendered content and deployed CSP/headers; future trace components need their own adversarial tests. |
+| Dependency, workflow or build compromise | PR code or a package reads secrets, mutates the repo or inserts content into exported files. | A lockfile exists and root/workspace npm scripts have no lifecycle hooks. There is no CI yet. PF-027 must add read-only, pinned, secret-free PR checks and inspect the exact static artifact. |
+| Local credential or private path | A key, private file, local path or opaque media reaches Git history or a build. | The root publication guard blocks selected patterns and unknown binaries, and the placeholder image has a reviewed hash. It is heuristic; manual history/source/output review remains mandatory. |
+| Provider or host outage | Visitor loses proof, sees a raw error or receives an invented model answer. | The current site is static and has no provider call. Independent backup, monitoring and live-model fail-closed behaviour remain PF-029/030/031 and later release gates. |
+
+### Verified baseline and known gaps
+
+The PF-026 review inspected tracked imports, scripts, lockfile references, Git history and generated output. An archive containing only tracked public files installed locked dependencies offline and passed formatting, type checks, seven claim tests and static export. The resulting 38-file artifact has six HTML files, no source maps and no detected registry-internal notes, private workspace markers or provider credential names. Six publication-guard tests and a repository-root guard pass. A second read-only reviewer found no private-source dependency or sensitive-history marker in the reachable repository objects.
+
+This establishes a local source/build boundary for the current revision. It does not prove every possible secret pattern is detected, that linked pages remain safe, or that deployment headers operate. The current guard's binary allowlist is repository-relative: scanning from the repository root covers the output, while invoking it with the output directory as the tree root flags the reviewed portrait. PF-027 must make artifact-only scanning work and verify synthetic leak cases. Until then, run the root scan after building and inspect the output manually. No preview or production response header has been tested.
+
 ## Controls to implement before V1
 
 1. **Content provenance:** each featured claim has a status, evidence source, last check and privacy approval. The build rejects missing fields. Professional work may use reviewed prose where code cannot be shared; no internal screenshots or metrics are inferred.
-2. **Publication boundary:** review tracked files, generated HTML/assets, metadata, trace JSON, previews and Git history. Run `python scripts/publication_guard.py` on the source tree and again on the static output after a build; it fails on unknown binary/encoding and large files so assets must receive explicit human review. The heuristic cannot prove confidentiality. CI integration and a reviewed-asset manifest remain PF-027 work.
+2. **Publication boundary:** review tracked files, generated HTML/assets, metadata, trace JSON, previews and Git history. Run the repository-root publication guard before and after the build; the post-build run traverses the static output. Review exported HTML/assets and history manually. A separate artifact-root invocation is a PF-027 fix because the current portrait hash allowlist is repository-relative. The guard fails on unknown binary/encoding and large files, so assets need explicit human review. CI integration and a reviewed-asset manifest remain PF-027 work.
 3. **Secret hygiene:** keep local keys outside Git; do not put model keys in `NEXT_PUBLIC_*`, static JavaScript, CI logs, previews, traces or error messages. Use separate least-privileged credentials only if a future server is deployed. Rotate a key immediately if exposed.
    OpenRouter's current Free plan does not include preferred-vendor or data-policy-based routing, so only approved public evidence may be sent through it; verify the actual model/provider policy before each trace release. [OpenRouter pricing](https://openrouter.ai/pricing), [privacy policy](https://openrouter.ai/privacy/).
 4. **Browser safety:** avoid raw HTML insertion; render reviewed text and escaped data. Review external links, content security policy and other static security headers on the actual deployed responses. Netlify supports custom headers and CSP, but they must be configured and tested for this app. [Netlify custom headers](https://docs.netlify.com/manage/routing/headers/), [CSP guide](https://docs.netlify.com/manage/security/content-security-policy/).

@@ -21,7 +21,7 @@ The static Home, theme system and EvalGate case study are implemented locally. T
 - [Home review](docs/PF-008-HOME-REVIEW.md), [EvalGate case review](docs/PF-009-EVALGATE-REVIEW.md), [theme and motion review](docs/PF-006-THEME-REVIEW.md) and [locale routing contract](docs/PF-013-LOCALE-ROUTING.md): local UI checks and the English-default country hint planned for reviewed translations.
 - [Claim intake registry](content/claims.json): approved public-source statements with provenance, exact scope and release-level review rules.
 - [Search and agent discovery contract](docs/DISCOVERY.md): web CV, semantic HTML and a future approved evidence index.
-- [Security policy](SECURITY.md) and [resilience plan](docs/RESILIENCE.md): release gates, failure behaviour and recovery.
+- [Security policy](SECURITY.md), [PF-026 source review](docs/PF-026-THREAT-REVIEW.md) and [resilience plan](docs/RESILIENCE.md): release gates, failure behaviour and recovery.
 - [Agent roles](agents/README.md) and [repository skills](.agents/skills/): scoped ownership and repeatable workflows.
 - [Pull request template](.github/PULL_REQUEST_TEMPLATE.md): checks for code, claims and publication.
 
