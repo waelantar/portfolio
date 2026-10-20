@@ -18,6 +18,22 @@
       "note": "The public profile describes TypeScript product interfaces and API integrations for Romulus. Wael approved this exact confidentiality-safe sentence for the public site on 2026-10-20. The profile is self-authored; no internal work artifact or backend service ownership is claimed."
     },
     {
+      "id": "romulus-call-analytics-frontend",
+      "category": "professional",
+      "statement": "I owned the Angular/TypeScript frontend for a call analytics experience in Romulus's voice-AI product. I built summary views, filters and drill-downs, with loading, empty and error states for different data conditions. I checked responsive and accessible behaviour and addressed release feedback. I did not own the backend data APIs or AI model runtime.",
+      "contributionOwner": "Wael Antar",
+      "scope": "Owned frontend implementation and release checks for a call analytics experience; no backend API or AI model runtime ownership, customer outcome or quantified impact claimed.",
+      "evidenceUrl": null,
+      "privacySafeExplanation": "Non-public work records were reviewed without importing them. Wael approved this exact paragraph for publication on 2026-10-20; public product pages establish context only, not individual contribution.",
+      "publicContextUrl": "https://us.romulus.live/",
+      "reviewState": "approved",
+      "sourceCheck": "owner_confirmed_confidential_work_review",
+      "lastCheckedAt": "2026-10-20",
+      "verifiedAt": "2026-10-20",
+      "publication": "approved",
+      "note": "The revised paragraph supersedes an earlier draft. No employer screenshots, brand assets, customer data, internal diagrams or metrics are approved. A separately reviewed original illustration may use invented values."
+    },
+    {
       "id": "evalgate-source-release",
       "category": "released_personal_project",
       "statement": "Wael published EvalGate v1.0.0 as a personal open-source RAG evaluation source release.",
