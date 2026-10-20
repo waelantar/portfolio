@@ -1,6 +1,6 @@
 # Portfolio product backlog
 
-**Updated:** 2026-10-20. **Current state:** PF-004 art direction is selected: Signal Route structure with warm editorial light theme. PF-003 employer copy and the illustrative-media boundary are approved; no case-study media or page has shipped. PF-002 public links were checked and the existing CV PDF was withheld after a private audit; PF-032 owns the portfolio-specific PDF. PF-001's seven registry sentences have verified public sources or owner-confirmed professional wording; their exact future rendering remains subject to release review. `main` is protected. Site implementation, monitoring, backup hosting and deployment remain pending. This backlog is a plan, so unchecked work is not shipped proof.
+**Updated:** 2026-10-20. **Current state:** PF-005 local static scaffold is built and awaiting review; PF-004 art direction is selected: Signal Route structure with warm editorial light theme. PF-003 employer copy and the illustrative-media boundary are approved; no case-study media or page has shipped. PF-002 public links were checked and the existing CV PDF was withheld after a private audit; PF-032 owns the portfolio-specific PDF. PF-001's seven registry sentences have verified public sources or owner-confirmed professional wording; their exact future rendering remains subject to release review. `main` is protected. The full site, monitoring, backup hosting and deployment remain pending. This backlog is a plan, so unchecked work is not shipped proof.
 
 ## Product goal and release rules
 
@@ -34,7 +34,7 @@ Priority: **P0** is required for the first public release; **P1** improves the r
 
 | ID | Priority | Work | Done when | Depends on |
 | --- | --- | --- | --- | --- |
-| PF-005 | P0 | Scaffold Next.js App Router, React, TypeScript and static export; add formatting, type check and a clean build. | A fresh checkout builds static pages without a server or secret. | PF-004 |
+| PF-005 | P0; DONE (LOCAL SCAFFOLD) | Scaffold Next.js App Router, React, TypeScript and static export; add formatting, type check and a clean build. | A fresh checkout builds static pages without a server or secret. | PF-004 |
 | PF-006 | P0 | Add design tokens, responsive layout, light/dark theme and motion fallback. | Both themes pass initial contrast review; all essential content works with reduced motion and keyboard input. | PF-005 |
 | PF-007 | P0 | Implement typed content and claim validation. | The build rejects a featured item missing provenance, review state and proof link or approved private-work explanation. | PF-001, PF-005 |
 | PF-008 | P0 | Build Home with headline, professional/personal proof, clear contact and direct case-study links. | On mobile and desktop, the first screen identifies scope, evidence and contact; no skill inflation or hidden CTA. | PF-003, PF-006, PF-007 |
@@ -47,7 +47,7 @@ Priority: **P0** is required for the first public release; **P1** improves the r
 | --- | --- | --- | --- | --- |
 | PF-011 | P0 | Write and render the professional case study using approved ownership and synthetic diagrams. | It answers what Wael owned, why decisions were made and how work was verified, without confidential artifacts. | PF-003, PF-007 |
 | PF-012 | P0 | Add reviewed OSS contributions and a short supporting-work section. | Each contribution links to its current merged/public artifact; scope is exact. | PF-002, PF-007 |
-| PF-013 | P0 | Add a focused French entrance path from the same fact registry. | English and French role, dates and evidence labels agree. | PF-007, PF-008 |
+| PF-013 | P0 | Add reviewed localized entrance paths from the same approved fact registry: French first, then German, Dutch, Spanish and Portuguese after copy review. Generate each path statically; never infer Wael's spoken fluency from a localized page. | Every enabled locale has equivalent role, dates, scope, evidence links, metadata and language tags; unreviewed translations stay unindexed. | PF-007, PF-008 |
 
 ### M3 — Local evidence assistant and real traces (10–16 h)
 

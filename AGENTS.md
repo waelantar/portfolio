@@ -2,7 +2,7 @@
 
 ## Mission and current state
 
-Build a public technical portfolio that makes Wael's verified work easy to inspect and shows careful agent-system engineering. This repository currently contains planning documents and a local publication-preflight helper, but **no site or API**. Do not describe a planned page, deployment, monitor, backup or model as shipped.
+Build a public technical portfolio that makes Wael's verified work easy to inspect and shows careful agent-system engineering. This repository contains a local static web scaffold and a publication-preflight helper, but **no published site or API**. Do not describe a planned page, deployment, monitor, backup or model as shipped.
 
 Start with `README.md`, `docs/BACKLOG.md`, `docs/DECISIONS.md`, `SECURITY.md` and `docs/RESILIENCE.md`. Use the role cards in `agents/` when dividing work. Repository-local skills in `.agents/skills/` guide delivery and security reviews; they do not grant permission to publish or contact anyone.
 
