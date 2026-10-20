@@ -19,6 +19,8 @@
 
 | D-013 | Reserve one original portrait asset at apps/web/public/images/wael-antar-portrait.webp; replace it only with Wael's reviewed photo near release. | The page can show a human image without a stock or generated likeness. The current abstract placeholder is hash-pinned so an unreviewed image change fails publication preflight. |
 | D-014 | Build localized routes only for reviewed copy, starting with French and extending to German, Dutch, Spanish and Portuguese. | Static build-time paths preserve the free-hosting model and let each market read the same approved facts. Localized UI does not claim language proficiency. |
+| D-015 | Use Netlify country hints on the root URL only after localized static paths are approved; default to English and keep explicit language URLs plus a manual override. | Country hints satisfy first-visit convenience without an API. Direct paths, hreflang and an English fallback keep content reachable when IP mapping is wrong or the backup host has no matching rule. The cookie override is a preference, never country or legal evidence. |
+
 ## Open decisions
 
 - The exact free model/provider, after tool-call, latency, data-policy and evaluation checks.

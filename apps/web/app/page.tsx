@@ -1,11 +1,17 @@
 import Image from "next/image";
+import { ThemeToggle } from "../components/ThemeToggle";
 
 export default function HomePage() {
   return (
     <main className="shell">
       <header className="masthead">
-        <span className="wordmark">WAEL ANTAR</span>
-        <span className="status">Portfolio build / 001</span>
+        <a className="wordmark" href="/">
+          WAEL ANTAR
+        </a>
+        <div className="header-actions">
+          <span className="status">Portfolio build / 001</span>
+          <ThemeToggle />
+        </div>
       </header>
 
       <section className="hero" aria-labelledby="page-title">
@@ -13,7 +19,8 @@ export default function HomePage() {
           <p className="eyebrow">Software engineer</p>
           <h1 id="page-title">
             Thoughtful systems.
-            <br />A little spark.
+            <br />
+            <span className="spark">A little spark.</span>
           </h1>
           <p className="intro">
             Wael works on TypeScript product interfaces and API-connected

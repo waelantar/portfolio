@@ -6,8 +6,8 @@
     "dev": "npm run dev --workspace @waelantar/portfolio-web",
     "build": "npm run build --workspace @waelantar/portfolio-web",
     "typecheck": "npm run typecheck --workspace @waelantar/portfolio-web",
-    "format": "prettier --write \"apps/web/**/*.{css,json,md,ts,tsx}\"",
-    "format:check": "prettier --check \"apps/web/**/*.{css,json,md,ts,tsx}\"",
+    "format": "prettier --write \"apps/web/**/*.{css,js,json,md,ts,tsx}\"",
+    "format:check": "prettier --check \"apps/web/**/*.{css,js,json,md,ts,tsx}\"",
     "check": "npm run format:check && npm run typecheck && npm run build"
   },
   "devDependencies": {

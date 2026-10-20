@@ -17,8 +17,8 @@ The abstract placeholder lives at public/images/wael-antar-portrait.webp. Replac
 
 ## Languages
 
-The locale registry lists English, French, German, Dutch, Spanish and Portuguese as target-country reading paths. Only English is active in this scaffold. PF-013 will add reviewed localized routes, starting with French; translated copy must preserve the approved facts and should be proofread before indexing. Localized content does not imply spoken-language proficiency. Static paths will be generated at build time without middleware or automatic geolocation redirects.
+The locale registry lists English, French, German, Dutch, Spanish and Portuguese as target-country reading paths. English is the default and sole active route today. PF-013 will add reviewed static localized routes, starting with French. Only the root entrance may later use Netlify's IP-country hint; unknown countries stay on English, while direct locale URLs and manual choice remain available. See docs/PF-013-LOCALE-ROUTING.md. Localized content does not imply spoken-language proficiency.
 
 ## Motion
 
-The initial orange route draws once over 0.9 seconds. Text is present before animation. Focus is visible and reduced-motion users see the complete route immediately. PF-006 owns the full theme, responsive and interaction review.
+PF-006 implements the shared ink and warm-paper themes, a persistent light/dark switch, responsive spacing and the original route motion. The route draws once over 0.9 seconds. Text is present before animation; reduced-motion users see the complete route immediately. The theme follows system preference when there is no saved choice, and the page remains readable without JavaScript. See docs/PF-006-THEME-REVIEW.md for contrast and browser checks.
