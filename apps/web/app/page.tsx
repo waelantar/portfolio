@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ThemeToggle } from "../components/ThemeToggle";
+import { homeIntroClaim } from "../lib/public-claims";
 
 export default function HomePage() {
   return (
@@ -22,14 +23,11 @@ export default function HomePage() {
             <br />
             <span className="spark">A little spark.</span>
           </h1>
-          <p className="intro">
-            Wael works on TypeScript product interfaces and API-connected
-            workflows for Romulus&apos;s voice-AI product.
-          </p>
+          <p className="intro">{homeIntroClaim.statement}</p>
           <p className="stage-note">
             The full evidence journey is being assembled and reviewed.
           </p>
-          <a className="proof-link" href="https://github.com/waelantar">
+          <a className="proof-link" href={homeIntroClaim.evidenceUrl}>
             Explore public source <span aria-hidden="true">↗</span>
           </a>
         </div>
