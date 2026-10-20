@@ -1,6 +1,6 @@
 # Portfolio product backlog
 
-**Updated:** 2026-10-20. **Current state:** the public source repository has a protected `main` planning baseline with role cards, repository skills, security policy and recovery plan. Site implementation, monitoring, backup hosting and deployment remain pending. This backlog is a plan, so unchecked work is not shipped proof.
+**Updated:** 2026-10-20. **Current state:** the public GitHub source repository has `main` and a PF-001 review branch; `main` is protected. PF-001 has a publication-held draft registry; direct public-link checks and claim approval remain open. Site implementation, monitoring, backup hosting and deployment remain pending. This backlog is a plan, so unchecked work is not shipped proof.
 
 ## Product goal and release rules
 
@@ -18,7 +18,7 @@ Priority: **P0** is required for the first public release; **P1** improves the r
 
 | ID | Priority | Work | Done when | Depends on |
 | --- | --- | --- | --- | --- |
-| PF-001 | P0 | Build an approved claim registry for professional work, EvalGate and merged OSS; record provenance, status, owner and public link or approved privacy-safe explanation. | Every featured sentence can be checked; planned work has a visible planned label. | — |
+| PF-001 | P0; IN PROGRESS | Build an approved claim registry for professional work, EvalGate and merged OSS; record provenance, status, owner and public link or approved privacy-safe explanation. `content/claims.json` now holds draft entries. | Every featured sentence can be checked; public links and employer wording are approved before any entry changes from hold; planned work has a visible planned label. | — |
 | PF-002 | P0 | Recheck public project, release, PR and contact links; compile and inspect a current CV PDF before linking it. | Links and CV reflect current verified facts; stale or unverified claims are withheld. | PF-001 |
 | PF-003 | P0 | Review employer case-study wording and media for confidentiality. | Approved prose has no internal code, screenshots, customer details, compensation or private metrics. | PF-001 |
 | PF-004 | P0 | Design two mood frames, desktop/mobile hero, case-study panel, trace state and reduced-motion storyboard. | Wael can recognize the analytical/playful direction; work, proof and contact remain legible at a glance. | PF-001 |
@@ -67,10 +67,14 @@ Priority: **P0** is required for the first public release; **P1** improves the r
 | --- | --- | --- | --- | --- |
 | PF-020 | P0 | Build an accessible trace player with pause, scrub, status, tool lanes, sources and text equivalent. | Both approved traces replay identically without network inference; keyboard and reduced-motion paths work. | PF-006, PF-019 |
 | PF-021 | P0 | Add metadata, sitemap, link checks, accessibility and mobile/performance review. | Pages are crawlable; contact/proof links work; keyboard and screen-reader pass is recorded; static assets stay small. | PF-008, PF-009, PF-011, PF-020 |
+| PF-032 | P0 | Build `/cv/` as the canonical semantic HTML CV, with a current selectable-text PDF linked from it. | The first HTML response contains truthful role, experience, project, OSS and contact text without JavaScript; PDF facts match the approved registry and canonical TeX. | PF-002, PF-005, PF-007 |
+| PF-033 | P0 | Generate `/evidence.json` from approved claims and add accurate per-page titles, descriptions, canonical links and Person/ProfilePage data where applicable. | Held claims are absent from exported HTML, JSON and metadata; the public index has stable IDs, scope, source and verification date; schema validates. | PF-007, PF-008, PF-032 |
+| PF-034 | P0 | Test search and agent reading paths on the static artifact and preview. | No-JavaScript fetch reads CV and proof links; sitemap/robots/canonical URLs are consistent; no private fields or unapproved claims appear in searchable output. | PF-021, PF-032, PF-033 |
+| PF-035 | P1 | After launch, verify indexing through Google Search Console and prepare approved links from GitHub and LinkedIn profiles. | Sitemap submission and index coverage are recorded; profile edits happen only after Wael confirms the exact changes; search queries are reviewed without claiming a ranking guarantee. | PF-023 |
 | PF-029 | P0 | Prepare a Cloudflare Pages **Direct Upload** backup path for the reviewed static artifact; keep it offline until publication approval. | Build checksum, upload procedure and last-good release record are ready; a local bad-main-change drill shows the backup artifact stays unchanged. No public backup URL is claimed yet. | PF-010, PF-021 |
 | PF-030 | P0 | Prepare independent uptime checks, alert route, Netlify usage review and a local recovery drill. | Synthetic failure reaches Wael through the chosen alert route; primary/backup live checks are explicitly reserved for PF-023. No operating monitor is claimed yet. | PF-029 |
 | PF-031 | P0 | Drill model removal, free-quota, timeout and malformed-tool states in the local adapter and replay UI. | No raw error or invented answer reaches the visitor; future live mode defaults off, fails to the verified replay and requires reevaluation to change models. | PF-018, PF-020 |
-| PF-022 | P0 | Review local build, source/history/HTML and traces; obtain approval for any external preview; inspect that preview and drill rollback. | Security and recovery preflight pass, cost remains $0/no card, and Wael approves the **exact** production artifact for both hosts. | PF-010, PF-021, PF-027–031 |
+| PF-022 | P0 | Review local build, source/history/HTML and traces; obtain approval for any external preview; inspect that preview and drill rollback. | Security and recovery preflight pass, cost remains $0/no card, and Wael approves the **exact** production artifact for both hosts. | PF-010, PF-021, PF-027–034 |
 | PF-023 | P0 | Publish the approved V1 to Netlify and the isolated Cloudflare backup, then activate and test independent monitoring. | Both URLs, deep links, assets, contact, alert and rollback are verified; commit, artifact checksum, deploy IDs and date are recorded. If backup or alert fails, do not claim a resilient V1. | PF-022 |
 
 ### M5 — Optional live assistant (separate 12–20 h decision)
@@ -85,7 +89,8 @@ Priority: **P0** is required for the first public release; **P1** improves the r
 1. Claims: PF-001 → PF-003 → PF-007 → PF-008/PF-011.
 2. Real Lab: PF-014 → PF-015 → PF-016 → PF-017 → PF-018 → PF-019 → PF-020.
 3. Security/recovery: PF-026 → PF-027/PF-028; PF-010 + PF-021 → PF-029 → PF-030; PF-018 + PF-020 → PF-031.
-4. Release: PF-010 + PF-020 + PF-021 + PF-027–031 → PF-022 → PF-023.
+4. Discovery: PF-001 + PF-002 + PF-007 → PF-032 → PF-033 → PF-034.
+5. Release: PF-010 + PF-020 + PF-021 + PF-027–034 → PF-022 → PF-023.
 
 The first public release includes the real replay. If the local agent is delayed, a public-facing preview can progress through M1/M2, but the Lab must say **in progress** until real traces exist. PF-024/025 never block V1. Any cut to P0 scope needs a recorded decision before publication.
 
@@ -96,12 +101,12 @@ The cards in `agents/` define the work. They are scoped subagent roles, not acti
 | Owner | Tickets | Deliverable and required handoff |
 | --- | --- | --- |
 | Product steward | PF-000; cross-ticket scope | Ordered ready queue, dependency and decision updates; record any P0 cut. |
-| Evidence editor | PF-001–003, PF-009, PF-011–013 | Reviewed public claim registry, copy and verified links; security receives publication-sensitive material. |
-| Web engineer | PF-004–008, PF-020–021 | Static pages, typed content, themes and replay; evidence checks words, security checks rendered output. |
+| Evidence editor | PF-001–003, PF-009, PF-011–013; factual review of PF-032–033 | Reviewed public claim registry, CV copy and verified links; security receives publication-sensitive material. |
+| Web engineer | PF-004–008, PF-020–021, PF-032–034 | Static pages, typed content, themes, replay and discovery outputs; evidence checks words, security checks rendered output. |
 | Agent systems engineer | PF-014–019, PF-024–025 | Local bounded API, model adapter, eval and genuine trace; security reviews data/tool boundaries, reliability reviews failures. |
 | Security reviewer | PF-026, PF-028; independent review of PF-027 and every PR | Threat model, publication review and safe adversarial findings; can block a release. |
 | Reliability engineer | PF-029–031 | Backup release, independent monitoring/alert and failure drills; release steward receives tested recovery evidence. |
-| Release steward | PF-010, PF-027, PF-022–023 | CI/security-gate implementation, preview, integrated release dossier, deployment IDs and rollback; security independently reviews PF-027 and Wael gives final publication approval. |
+| Release steward | PF-010, PF-027, PF-022–023, PF-035 | CI/security-gate implementation, preview, integrated release dossier, deployment IDs, rollback and post-launch indexing checks; security independently reviews PF-027 and Wael gives final publication approval. |
 
 ## Definition of done for each item
 
