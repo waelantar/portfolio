@@ -1,6 +1,6 @@
 # Wael Antar — portfolio
 
-**Status:** local static scaffold and theme system implemented; no site or public demo has been published from this repository yet.
+**Status:** local Home, theme system and concise evidence routes implemented; no site or public demo has been published from this repository yet.
 
 This project will present verified software-engineering work through concise case studies and a Systems Lab that replays real, evaluated runs of an evidence assistant. The first public release is a static site on Netlify Free. Live visitor inference is a separate release decision.
 
@@ -11,14 +11,14 @@ This project will present verified software-engineering work through concise cas
 - A local-first NestJS and PostgreSQL evidence assistant. OpenRouter Free may be used for local trace generation after model and data-policy checks; a local model is the fallback.
 - GitHub Actions for validation once implementation starts. The static site is intended for Netlify Free's provided domain.
 
-The static web scaffold and its theme system are implemented locally. The evidence assistant, hosting and other release features remain planned; none implies professional experience.
+The static Home, theme system and concise evidence routes are implemented locally. The evidence assistant, hosting and other release features remain planned; none implies professional experience.
 
 ## Start here
 
 - [Backlog](docs/BACKLOG.md): ordered work, dependencies, acceptance checks and release cuts.
 - [Branching strategy](docs/BRANCHING.md): branch, review and release rules.
 - [Decision record](docs/DECISIONS.md): the trade-offs behind the initial repository and release shape.
-- [Theme and motion review](docs/PF-006-THEME-REVIEW.md) and [locale routing contract](docs/PF-013-LOCALE-ROUTING.md): local UI checks and the English-default country hint planned for reviewed translations.
+- [Home review](docs/PF-008-HOME-REVIEW.md), [theme and motion review](docs/PF-006-THEME-REVIEW.md) and [locale routing contract](docs/PF-013-LOCALE-ROUTING.md): local UI checks and the English-default country hint planned for reviewed translations.
 - [Claim intake registry](content/claims.json): approved public-source statements with provenance, exact scope and release-level review rules.
 - [Search and agent discovery contract](docs/DISCOVERY.md): web CV, semantic HTML and a future approved evidence index.
 - [Security policy](SECURITY.md) and [resilience plan](docs/RESILIENCE.md): release gates, failure behaviour and recovery.

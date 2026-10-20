@@ -1,6 +1,6 @@
 # Static web scaffold
 
-PF-005 provides a Next.js App Router application with a static export. The root page is a reviewed implementation scaffold, not the finished portfolio or a published site. Its page is intentionally marked noindex until complete proof pages and release review pass.
+PF-005 provides a Next.js App Router application with a static export. PF-008 adds Home and concise professional and EvalGate evidence routes. This is not the finished portfolio or a published site. Pages remain noindex until complete proof pages and release review pass.
 
 Run from the repository root:
 
@@ -27,3 +27,7 @@ PF-006 implements the shared ink and warm-paper themes, a persistent light/dark 
 ## Content gate
 
 Home reads its approved professional sentence and evidence URL from `content/claims.json` through `lib/public-claims.ts`. The typed validator refuses incomplete approved claims and held featured claims during the static build. See `../../docs/PF-007-CLAIM-VALIDATION.md` for the contract and verification.
+
+## Home and evidence routes
+
+The first screen shows approved professional scope, links to three proof categories and a direct email action. The professional and EvalGate routes are intentionally concise; PF-011 and PF-009 will expand them. See `../../docs/PF-008-HOME-REVIEW.md` for content boundaries and local browser checks.
