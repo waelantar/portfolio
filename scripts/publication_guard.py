@@ -27,6 +27,17 @@ CONTENT_RULES = {
     "private-key-block": re.compile("-" * 5 + r"BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY" + "-" * 5),
     "Windows-home-path": re.compile(r"[A-Za-z]:[\\/]+Users[\\/]+[^\\/\s]+", re.IGNORECASE),
     "Unix-home-path": re.compile(r"/(?:Users|home)/[^/\s]+/"),
+    "private-workflow-disclosure": re.compile(
+        r"\b(?:"
+        + "job" + r"[\s_-]*hunt(?:ing)?"
+        + "|job" + r"[\s_-]*search(?:ing)?"
+        + "|application" + r"[\s_-]*tracker"
+        + "|looking" + r"\s+for\s+(?:a\s+)?job"
+        + "|open" + r"\s+to\s+work"
+        + "|recruit" + r"(?:er|ment|ing)"
+        + r")\b",
+        re.IGNORECASE,
+    ),
 }
 
 

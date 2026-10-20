@@ -25,6 +25,24 @@ class PublicationGuardTests(unittest.TestCase):
             self.assertIn("private-source-directory", rules)
             self.assertNotIn(secret, repr(findings))
 
+    def test_flags_private_workflow_disclosure_without_echoing_text(self):
+        phrases = (
+            "job" + "-hunt",
+            "job" + " search",
+            "application" + " tracker",
+            "looking" + " for a job",
+            "open" + " to work",
+            "recruit" + "er",
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            page = Path(tmp, "page.md")
+            for phrase in phrases:
+                with self.subTest(phrase=phrase):
+                    page.write_text(phrase, encoding="utf-8")
+                    findings = inspect_tree(Path(tmp))
+                    self.assertIn("private-workflow-disclosure", {rule for rule, _ in findings})
+                    self.assertNotIn(phrase, repr(findings))
+
     def test_flags_absolute_home_path(self):
         with tempfile.TemporaryDirectory() as tmp:
             home_path = "C:" + "/" + "Users/example/work/file.txt"
