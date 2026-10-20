@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "updatedAt": "2026-10-20",
-  "releaseRule": "Only approved entries may be rendered as shipped or professional proof. Recheck every public URL before release.",
+  "releaseRule": "Only approved entries may be rendered as shipped or professional proof. Recheck every public URL and approve the exact release artifact before publication.",
   "claims": [
     {
       "id": "romulus-product-frontend",
@@ -10,12 +10,12 @@
       "contributionOwner": "Wael Antar",
       "scope": "Frontend product engineering; this does not claim backend service ownership.",
       "evidenceUrl": "https://github.com/waelantar/waelantar/blob/main/README.md",
-      "reviewState": "draft",
+      "reviewState": "approved",
       "sourceCheck": "public_profile_self_reported",
       "lastCheckedAt": "2026-10-20",
-      "verifiedAt": null,
-      "publication": "hold",
-      "note": "The public profile describes TypeScript product interfaces and API integrations for Romulus. It is self-authored, so exact employer scope and confidentiality-safe wording still need Wael's review."
+      "verifiedAt": "2026-10-20",
+      "publication": "approved",
+      "note": "The public profile describes TypeScript product interfaces and API integrations for Romulus. Wael approved this exact confidentiality-safe sentence for the public site on 2026-10-20. The profile is self-authored; no internal work artifact or backend service ownership is claimed."
     },
     {
       "id": "evalgate-source-release",
@@ -24,11 +24,11 @@
       "contributionOwner": "Wael Antar",
       "scope": "Source release and local validation; no hosted service or customer deployment is claimed.",
       "evidenceUrl": "https://github.com/waelantar/evalgate/releases/tag/v1.0.0",
-      "reviewState": "draft",
+      "reviewState": "approved",
       "sourceCheck": "public_release_verified",
       "lastCheckedAt": "2026-10-20",
       "verifiedAt": "2026-10-20",
-      "publication": "hold",
+      "publication": "approved",
       "note": "GitHub v1.0.0 release was published on 2026-09-24 by waelantar; the repository is public and the tag resolves. Source release only; no hosted service is inferred."
     },
     {
@@ -38,11 +38,11 @@
       "contributionOwner": "Wael Antar",
       "scope": "One reviewed open-source contribution; not professional backend tenure.",
       "evidenceUrl": "https://github.com/twentyhq/twenty/pull/26787",
-      "reviewState": "draft",
+      "reviewState": "approved",
       "sourceCheck": "public_merged_pr_verified",
       "lastCheckedAt": "2026-10-20",
       "verifiedAt": "2026-10-20",
-      "publication": "hold",
+      "publication": "approved",
       "note": "GitHub PR authored by waelantar and merged on 2026-09-29. The changed files include TypeScript server groupBy validation, service/schema code and tests."
     },
     {
@@ -52,11 +52,11 @@
       "contributionOwner": "Wael Antar",
       "scope": "React open-source contribution; not professional React tenure.",
       "evidenceUrl": "https://github.com/twentyhq/twenty/pull/26969",
-      "reviewState": "draft",
+      "reviewState": "approved",
       "sourceCheck": "public_merged_pr_verified",
       "lastCheckedAt": "2026-10-20",
       "verifiedAt": "2026-10-20",
-      "publication": "hold",
+      "publication": "approved",
       "note": "GitHub PR authored by waelantar and merged on 2026-10-09. The changed files include React rich-text editor code and focused tests."
     },
     {
@@ -66,11 +66,11 @@
       "contributionOwner": "Wael Antar",
       "scope": "Open-source contribution; do not generalize to ownership of Twenty.",
       "evidenceUrl": "https://github.com/twentyhq/twenty/pull/27041",
-      "reviewState": "draft",
+      "reviewState": "approved",
       "sourceCheck": "public_merged_pr_verified",
       "lastCheckedAt": "2026-10-20",
       "verifiedAt": "2026-10-20",
-      "publication": "hold",
+      "publication": "approved",
       "note": "GitHub PR authored by waelantar and merged on 2026-10-09. The changed files include front components, side-panel code, SDK context and tests."
     },
     {
@@ -80,11 +80,11 @@
       "contributionOwner": "Wael Antar",
       "scope": "Python open-source contribution; not a shipped personal product or Node.js experience.",
       "evidenceUrl": "https://github.com/HKUDS/nanobot/pull/4352",
-      "reviewState": "draft",
+      "reviewState": "approved",
       "sourceCheck": "public_merged_pr_verified",
       "lastCheckedAt": "2026-10-20",
       "verifiedAt": "2026-10-20",
-      "publication": "hold",
+      "publication": "approved",
       "note": "GitHub PR authored by waelantar and merged on 2026-06-16. The changed files are Python context, memory, helpers and tests."
     },
     {
@@ -94,11 +94,11 @@
       "contributionOwner": "Wael Antar",
       "scope": "Python open-source contribution; not a shipped personal product or Node.js experience.",
       "evidenceUrl": "https://github.com/HKUDS/nanobot/pull/4433",
-      "reviewState": "draft",
+      "reviewState": "approved",
       "sourceCheck": "public_merged_pr_verified",
       "lastCheckedAt": "2026-10-20",
       "verifiedAt": "2026-10-20",
-      "publication": "hold",
+      "publication": "approved",
       "note": "GitHub PR authored by waelantar and merged on 2026-06-24. The changed files are Python pairing-store code and tests."
     }
   ]

@@ -1,6 +1,6 @@
 # Portfolio product backlog
 
-**Updated:** 2026-10-20. **Current state:** PF-001's initial draft registry was merged to `main`; direct public-source checks are recorded for review. All claims remain held; professional wording approval remains open. `main` is protected. Site implementation, monitoring, backup hosting and deployment remain pending. This backlog is a plan, so unchecked work is not shipped proof.
+**Updated:** 2026-10-20. **Current state:** PF-001's seven registry sentences have verified public sources or owner-confirmed professional wording; their exact future rendering remains subject to release review. `main` is protected. Site implementation, monitoring, backup hosting and deployment remain pending. This backlog is a plan, so unchecked work is not shipped proof.
 
 ## Product goal and release rules
 
@@ -18,7 +18,7 @@ Priority: **P0** is required for the first public release; **P1** improves the r
 
 | ID | Priority | Work | Done when | Depends on |
 | --- | --- | --- | --- | --- |
-| PF-001 | P0; IN REVIEW | Build an approved claim registry for professional work, EvalGate and merged OSS; record provenance, status, owner and public link or approved privacy-safe explanation. `content/claims.json` holds draft entries; `docs/CLAIM-REVIEW.md` records public-source checks. | Every featured sentence can be checked; public links and employer wording are approved before any entry changes from hold; planned work has a visible planned label. | — |
+| PF-001 | P0; DONE | Build an approved claim registry for professional work, EvalGate and merged OSS; record provenance, status, owner and public link or approved privacy-safe explanation. `content/claims.json` holds approved source copy; `docs/CLAIM-REVIEW.md` records public-source checks and wording approval. | Every featured sentence can be checked; public links and employer wording are approved before any entry changes from hold; planned work has a visible planned label. | — |
 | PF-002 | P0 | Recheck public project, release, PR and contact links; compile and inspect a current CV PDF before linking it. | Links and CV reflect current verified facts; stale or unverified claims are withheld. | PF-001 |
 | PF-003 | P0 | Review employer case-study wording and media for confidentiality. | Approved prose has no internal code, screenshots, customer details, compensation or private metrics. | PF-001 |
 | PF-004 | P0 | Design two mood frames, desktop/mobile hero, case-study panel, trace state and reduced-motion storyboard. | Wael can recognize the analytical/playful direction; work, proof and contact remain legible at a glance. | PF-001 |
