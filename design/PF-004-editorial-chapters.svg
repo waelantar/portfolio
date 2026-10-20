@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">PF-004 direction B: Editorial Chapters</title>
+  <desc id="desc">Warm light editorial portfolio mood frame. Desktop and mobile heroes foreground Wael Antar, approved professional scope, released work and contact. A professional case-study sketch and an empty Systems Lab panel are shown below. All UI is a design concept.</desc>
+  <defs>
+    <pattern id="grain" width="44" height="44" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".8" fill="#c9c4bb"/></pattern>
+    <style>
+      text{font-family:Arial,Helvetica,sans-serif}
+      .mono{font-family:Consolas,Monaco,monospace}
+      .ink{fill:#17191f}
+      .muted{fill:#555b62}
+      .accent{fill:#b8400d}
+      .kicker{font-size:12px;font-weight:700;letter-spacing:2px}
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="#ede9e1"/>
+  <text x="40" y="42" class="mono accent kicker">PF-004 / DIRECTION B / EDITORIAL CHAPTERS</text>
+  <text x="1300" y="42" class="mono muted" font-size="12">DESIGN FRAME · 20 OCT 2026</text>
+
+  <!-- Desktop hero -->
+  <rect x="40" y="70" width="1100" height="430" rx="8" fill="#f7f5f0" stroke="#c9c2b7"/>
+  <rect x="40" y="70" width="1100" height="430" rx="8" fill="url(#grain)" opacity=".5"/>
+  <rect x="40" y="70" width="13" height="430" fill="#b8400d"/>
+  <text x="86" y="111" class="mono ink kicker">WAEL ANTAR / PORTFOLIO</text>
+  <text x="722" y="111" class="mono muted" font-size="12">WORK</text>
+  <text x="794" y="111" class="mono muted" font-size="12">LAB</text>
+  <text x="850" y="111" class="mono muted" font-size="12">ABOUT</text>
+  <rect x="978" y="85" width="126" height="42" rx="3" fill="#17191f"/>
+  <text x="1000" y="113" fill="#f7f5f0" font-size="14" font-weight="700">CONTACT ↗</text>
+  <path d="M 85 133 H 1104" stroke="#c9c2b7"/>
+  <text x="86" y="183" class="mono accent kicker">01 / MAKE THE WORK LEGIBLE</text>
+  <text x="81" y="280" class="ink" font-size="94" font-weight="800" letter-spacing="-7">Wael Antar</text>
+  <text x="88" y="324" class="ink" font-size="22">Wael works on TypeScript product interfaces and</text>
+  <text x="88" y="356" class="ink" font-size="22">API-connected workflows for Romulus's voice-AI product.</text>
+  <path d="M 86 385 H 1104" stroke="#b8400d" stroke-width="2"/>
+  <rect x="86" y="410" width="175" height="50" rx="3" fill="#b8400d"/>
+  <text x="110" y="442" fill="#fffaf3" font-size="17" font-weight="700">Explore work ↗</text>
+  <rect x="274" y="410" width="145" height="50" rx="3" fill="none" stroke="#17191f"/>
+  <text x="301" y="442" class="ink" font-size="17" font-weight="700">Contact ↗</text>
+  <text x="716" y="442" class="mono muted" font-size="12">PROFESSIONAL  /  RELEASED  /  OSS</text>
+  <text x="86" y="482" class="mono muted" font-size="12">ONE CHAPTER AT A TIME. SCOPE BEFORE SPECTACLE.</text>
+
+  <!-- Chapter rail -->
+  <rect x="840" y="165" width="263" height="176" rx="6" fill="#f1ece3" stroke="#c9c2b7"/>
+  <text x="868" y="197" class="mono accent kicker">PROOF INDEX</text>
+  <path d="M 867 211 H 1076 M 867 253 H 1076 M 867 295 H 1076" stroke="#ccc4b9"/>
+  <text x="867" y="241" class="mono accent" font-size="13">01</text>
+  <text x="904" y="241" class="ink" font-size="16" font-weight="700">Romulus</text>
+  <text x="867" y="283" class="mono accent" font-size="13">02</text>
+  <text x="904" y="283" class="ink" font-size="16" font-weight="700">EvalGate v1.0.0</text>
+  <text x="867" y="325" class="mono accent" font-size="13">03</text>
+  <text x="904" y="325" class="ink" font-size="16" font-weight="700">Merged OSS</text>
+
+  <!-- Case-study panel -->
+  <rect x="40" y="530" width="540" height="420" rx="8" fill="#f7f5f0" stroke="#c9c2b7"/>
+  <rect x="40" y="530" width="13" height="420" fill="#17191f"/>
+  <text x="82" y="574" class="mono accent kicker">CHAPTER 01 / PROFESSIONAL</text>
+  <text x="82" y="624" class="ink" font-size="36" font-weight="800">Call analytics</text>
+  <text x="82" y="660" class="ink" font-size="18">I owned the Angular/TypeScript frontend for a call</text>
+  <text x="82" y="686" class="ink" font-size="18">analytics experience in Romulus's voice-AI product.</text>
+  <path d="M 82 716 H 540" stroke="#b8400d" stroke-width="2"/>
+  <text x="82" y="746" class="mono muted" font-size="12">ILLUSTRATIVE INTERACTION / NO PRODUCT DATA</text>
+  <rect x="82" y="765" width="135" height="56" rx="3" fill="#efeae1" stroke="#aba397"/>
+  <rect x="242" y="765" width="135" height="56" rx="3" fill="#efeae1" stroke="#aba397"/>
+  <rect x="402" y="765" width="135" height="56" rx="3" fill="#efeae1" stroke="#aba397"/>
+  <text x="107" y="800" class="ink" font-size="15">Summary</text>
+  <text x="289" y="800" class="ink" font-size="15">Filter</text>
+  <text x="447" y="800" class="ink" font-size="15">Detail</text>
+  <path d="M 217 793 H 242 M 377 793 H 402" stroke="#b8400d" stroke-width="3"/>
+  <text x="82" y="869" class="ink" font-size="17" font-weight="700">Read the approved scope ↗</text>
+  <text x="82" y="920" class="mono muted" font-size="12">DESIGN CONCEPT · NOT A SHIPPED PAGE</text>
+
+  <!-- Lab empty state -->
+  <rect x="600" y="530" width="540" height="420" rx="8" fill="#17191f" stroke="#17191f"/>
+  <rect x="600" y="530" width="13" height="420" fill="#b8400d"/>
+  <text x="644" y="574" fill="#ffb184" class="mono kicker">CHAPTER 03 / SYSTEMS LAB</text>
+  <text x="644" y="624" fill="#f7f5f0" font-size="36" font-weight="800">A trace you can inspect.</text>
+  <text x="644" y="658" fill="#c6c9cc" font-size="16">This frame shows the empty design state.</text>
+  <rect x="644" y="690" width="452" height="134" rx="4" fill="#22252c" stroke="#5c626d"/>
+  <text x="669" y="728" class="mono" fill="#ffb184" font-size="12">SOURCE    TOOL    ANSWER</text>
+  <path d="M 670 741 H 1069" stroke="#51565f"/>
+  <text x="669" y="778" fill="#f7f5f0" font-size="18" font-weight="700">No evaluated run loaded</text>
+  <text x="669" y="803" fill="#c6c9cc" font-size="13">Real events and citations come later.</text>
+  <text x="644" y="869" fill="#f7f5f0" font-size="17" font-weight="700">Explore released EvalGate proof ↗</text>
+  <text x="644" y="920" fill="#b8bdc4" class="mono" font-size="12">NO FABRICATED EVENTS, TIMES OR MODEL OUTPUT</text>
+
+  <!-- Mobile hero -->
+  <rect x="1170" y="70" width="390" height="880" rx="18" fill="#f7f5f0" stroke="#aaa397" stroke-width="2"/>
+  <rect x="1170" y="70" width="9" height="880" rx="4" fill="#b8400d"/>
+  <text x="1202" y="118" class="mono ink kicker">WAEL ANTAR</text>
+  <text x="1502" y="118" class="ink" font-size="23">☰</text>
+  <path d="M 1201 143 H 1530" stroke="#c9c2b7"/>
+  <text x="1202" y="191" class="mono accent kicker">01 / MAKE THE WORK LEGIBLE</text>
+  <text x="1198" y="266" class="ink" font-size="61" font-weight="800" letter-spacing="-5">Wael</text>
+  <text x="1198" y="333" class="ink" font-size="61" font-weight="800" letter-spacing="-5">Antar.</text>
+  <text x="1202" y="375" class="ink" font-size="18">Wael works on TypeScript product</text>
+  <text x="1202" y="404" class="ink" font-size="18">interfaces and API-connected</text>
+  <text x="1202" y="433" class="ink" font-size="18">workflows for Romulus's voice-AI</text>
+  <text x="1202" y="462" class="ink" font-size="18">product.</text>
+  <rect x="1202" y="488" width="164" height="48" rx="3" fill="#b8400d"/>
+  <text x="1224" y="519" fill="#fffaf3" font-size="16" font-weight="700">Explore work ↗</text>
+  <rect x="1376" y="488" width="149" height="48" rx="3" fill="none" stroke="#17191f"/>
+  <text x="1401" y="519" class="ink" font-size="16" font-weight="700">Contact ↗</text>
+  <path d="M 1202 572 H 1527" stroke="#b8400d" stroke-width="2"/>
+  <text x="1202" y="605" class="mono accent kicker">PROOF INDEX</text>
+  <text x="1202" y="648" class="mono accent" font-size="14">01</text>
+  <text x="1245" y="648" class="ink" font-size="19" font-weight="700">Romulus product work</text>
+  <path d="M 1202 665 H 1527" stroke="#d0c9bf"/>
+  <text x="1202" y="703" class="mono accent" font-size="14">02</text>
+  <text x="1245" y="703" class="ink" font-size="19" font-weight="700">EvalGate v1.0.0</text>
+  <path d="M 1202 721 H 1527" stroke="#d0c9bf"/>
+  <text x="1202" y="758" class="mono accent" font-size="14">03</text>
+  <text x="1245" y="758" class="ink" font-size="19" font-weight="700">Merged OSS</text>
+  <path d="M 1202 779 H 1527" stroke="#d0c9bf"/>
+  <text x="1202" y="850" class="mono muted" font-size="12">WORK · PROOF · CONTACT</text>
+  <text x="1202" y="922" class="mono muted" font-size="10">MOBILE HERO / CONCEPT FRAME</text>
+</svg>
