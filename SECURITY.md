@@ -1,6 +1,6 @@
 # Security policy and release gate
 
-**Status:** planning controls. This repository has no running site, API, monitor or security certification yet. Security claims on the eventual portfolio must link to implemented controls and test evidence.
+**Status:** planning controls. This repository has a local static scaffold but no externally deployed site, API, monitor or security certification yet. Security claims on the eventual portfolio must link to implemented controls and test evidence.
 
 ## Assets and trust boundaries
 
