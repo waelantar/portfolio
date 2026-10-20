@@ -1,6 +1,6 @@
 # PF-004 art direction review
 
-**20 October 2026. State: direction choice pending.** These are original, static design frames for a future portfolio. They are not a running site, an employer screen, a released case study, or a recorded agent trace.
+**20 October 2026. State: direction selected by Wael.** These are original, static design frames for a future portfolio. They are not a running site, an employer screen, a released case study, or a recorded agent trace.
 
 ## Two directions
 
@@ -14,9 +14,15 @@ The orange line connects three distinct kinds of evidence: professional product 
 
 ![Light Editorial Chapters mood frame with desktop hero, case-study sketch, empty lab state and mobile hero](../design/PF-004-editorial-chapters.svg)
 
-A warm paper surface, bold type and numbered chapters make the story feel deliberate. The proof index puts professional, personal and open-source work in a compact order. This direction is quieter and easier to scan, with the same first-view content and contact action.
+A warm paper surface, bold type and numbered chapters make the story feel deliberate. The proof index puts professional, personal and open-source work in a compact order. This direction is quieter and easier to scan, with the same first-view content and contact action. Its warm palette and editorial type treatment are the selected light-theme reference; its separate chapter layout is not the selected site structure.
 
-**Recommendation for implementation:** use A's route-led structure and energy, with B's warm editorial treatment as the light-theme companion. Keep the content order and component boundaries the same across themes. Wael's choice is still required before PF-005/PF-006 turn this into a site.
+**Selected implementation direction:** Wael chose A's route-led structure with B's warm light-theme treatment on 20 October 2026. Use one semantic page structure and the same content order, proof nodes and contact placement in both themes. Switch palette, surface texture and text treatment through theme tokens; do not build a separate chapter layout for light mode.
+
+### Selected light companion
+
+![Selected warm light Signal Route frame with the same desktop and mobile structure as the dark frame](../design/PF-004-signal-route-light.svg)
+
+This third frame applies B's warm colour treatment to A's actual structure. It makes the chosen pair directly reviewable: the route, proof order, case-study panel, empty Lab state and contact placement remain in the same positions across themes.
 
 ## Shared content and boundaries
 
@@ -44,7 +50,7 @@ Calculated token-pair contrast is 17.85:1 for dark primary text, 16.13:1 for lig
 | Moment | Normal motion | Reduced motion / no JavaScript |
 | --- | --- | --- |
 | First paint | Name, approved scope, proof labels and contact are already visible. | Same complete content, immediately. |
-| Hero entrance | A's route draws **once** over about 0.9 seconds after text is visible. B's chapter rule can reveal once over about 0.6 seconds. No looping glow or parallax. | Show the finished route or rule with no transition. |
+| Hero entrance | The selected route draws **once** over about 0.9 seconds after text is visible in either theme. No looping glow or parallax. | Show the finished route with no transition. |
 | Deliberate action | Card focus, hover or tap moves emphasis to the next proof item in 0.18–0.24 seconds. Use a visible keyboard focus ring and the same labels on touch. | Change emphasis immediately; preserve focus and label. |
 | Case-study reading | A short line can guide eye order from ownership to decision to validation. Never delay the text itself. | Text and diagram are static and readable. |
 | Systems Lab | The current state stays empty. Later, only a genuine approved trace may drive status, tool, source and failure states; playback is user controlled. | Use a complete text equivalent and controls that do not require animation. |
@@ -52,6 +58,6 @@ Calculated token-pair contrast is 17.85:1 for dark primary text, 16.13:1 for lig
 
 ## Acceptance review and next implementation
 
-The two frames were opened in a local browser at 1600 × 1000; each includes a 390-pixel mobile hero. The SVG source was parsed as XML and inspected visually for clipping and legibility. This is a composition review, not a functional mobile, keyboard or screen-reader test; those belong to PF-006/PF-008 and the built preview.
+The two explorations and the selected light companion were opened in a local browser at 1600 × 1000; each includes a 390-pixel mobile hero. The SVG source was parsed as XML and inspected visually for clipping and legibility. This is a composition review, not a functional mobile, keyboard or screen-reader test; those belong to PF-006/PF-008 and the built preview.
 
-PF-004 can be marked done once Wael selects a direction or an explicit blend. PF-005 may then scaffold the static site and PF-006 may implement theme, responsive layout and motion fallback. The exact page and any external preview still need their own publication review.
+Wael selected the blend above on 20 October 2026, completing PF-004's direction check. PF-005 may scaffold the static site and PF-006 may implement the shared structure, themes, responsive layout and motion fallback. The exact page and any external preview still need their own publication review.
