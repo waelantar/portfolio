@@ -1,6 +1,6 @@
 # Portfolio product backlog
 
-**Updated:** 2026-10-20. **Current state:** PF-001's seven registry sentences have verified public sources or owner-confirmed professional wording; their exact future rendering remains subject to release review. `main` is protected. Site implementation, monitoring, backup hosting and deployment remain pending. This backlog is a plan, so unchecked work is not shipped proof.
+**Updated:** 2026-10-20. **Current state:** PF-002 public links were checked and the existing CV PDF was withheld after a private audit; PF-032 owns the portfolio-specific PDF. PF-001's seven registry sentences have verified public sources or owner-confirmed professional wording; their exact future rendering remains subject to release review. `main` is protected. Site implementation, monitoring, backup hosting and deployment remain pending. This backlog is a plan, so unchecked work is not shipped proof.
 
 ## Product goal and release rules
 
@@ -19,7 +19,7 @@ Priority: **P0** is required for the first public release; **P1** improves the r
 | ID | Priority | Work | Done when | Depends on |
 | --- | --- | --- | --- | --- |
 | PF-001 | P0; DONE | Build an approved claim registry for professional work, EvalGate and merged OSS; record provenance, status, owner and public link or approved privacy-safe explanation. `content/claims.json` holds approved source copy; `docs/CLAIM-REVIEW.md` records public-source checks and wording approval. | Every featured sentence can be checked; public links and employer wording are approved before any entry changes from hold; planned work has a visible planned label. | — |
-| PF-002 | P0 | Recheck public project, release, PR and contact links; compile and inspect a current CV PDF before linking it. | Links and CV reflect current verified facts; stale or unverified claims are withheld. | PF-001 |
+| PF-002 | P0; DONE (PDF HELD) | Recheck public project, release, PR and contact links; compile and inspect a current CV PDF before linking it. Public checks and the private audit decision are recorded in `docs/PF-002-LINK-CV-AUDIT.md`; no PDF is linked. | Links and CV reflect current verified facts; stale or unverified claims are withheld. | PF-001 |
 | PF-003 | P0 | Review employer case-study wording and media for confidentiality. | Approved prose has no internal code, screenshots, customer details, compensation or private metrics. | PF-001 |
 | PF-004 | P0 | Design two mood frames, desktop/mobile hero, case-study panel, trace state and reduced-motion storyboard. | Wael can recognize the analytical/playful direction; work, proof and contact remain legible at a glance. | PF-001 |
 
@@ -67,7 +67,7 @@ Priority: **P0** is required for the first public release; **P1** improves the r
 | --- | --- | --- | --- | --- |
 | PF-020 | P0 | Build an accessible trace player with pause, scrub, status, tool lanes, sources and text equivalent. | Both approved traces replay identically without network inference; keyboard and reduced-motion paths work. | PF-006, PF-019 |
 | PF-021 | P0 | Add metadata, sitemap, link checks, accessibility and mobile/performance review. | Pages are crawlable; contact/proof links work; keyboard and screen-reader pass is recorded; static assets stay small. | PF-008, PF-009, PF-011, PF-020 |
-| PF-032 | P0 | Build `/cv/` as the canonical semantic HTML CV, with a current selectable-text PDF linked from it. | The first HTML response contains truthful role, experience, project, OSS and contact text without JavaScript; PDF facts match the approved registry and canonical TeX. | PF-002, PF-005, PF-007 |
+| PF-032 | P0 | Build `/cv/` as the canonical semantic HTML CV and author a portfolio-specific selectable-text PDF from approved public content. | The first HTML response contains truthful role, experience, project, OSS and contact text without JavaScript; the PDF matches the approved registry and portfolio CV source, passes artifact review, and is linked only then. | PF-002, PF-005, PF-007 |
 | PF-033 | P0 | Generate `/evidence.json` from approved claims and add accurate per-page titles, descriptions, canonical links and Person/ProfilePage data where applicable. | Held claims are absent from exported HTML, JSON and metadata; the public index has stable IDs, scope, source and verification date; schema validates. | PF-007, PF-008, PF-032 |
 | PF-034 | P0 | Test search and agent reading paths on the static artifact and preview. | No-JavaScript fetch reads CV and proof links; sitemap/robots/canonical URLs are consistent; no private fields or unapproved claims appear in searchable output. | PF-021, PF-032, PF-033 |
 | PF-035 | P1 | After launch, verify indexing through Google Search Console and prepare approved links from GitHub and LinkedIn profiles. | Sitemap submission and index coverage are recorded; profile edits happen only after Wael confirms the exact changes; search queries are reviewed without claiming a ranking guarantee. | PF-023 |

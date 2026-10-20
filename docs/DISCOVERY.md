@@ -22,7 +22,7 @@ An optional `/llms.txt` may point to the canonical HTML pages and evidence index
 2. Keep the primary CV and case-study facts in build-time HTML. Use real anchors with `href`, readable link text and stable descriptive paths. Motion and interactive visuals must not hide the underlying text.
 3. Use per-page title/description, canonical URL, Open Graph text and accurate `Person`/`ProfilePage` structured data only after the public URL and facts are fixed. Do not add ratings, awards, employers or `sameAs` links without proof.
 4. Generate all public formats from one approved content source. Exclude `publication: hold` and unverified entries from pages, JSON, metadata, structured data and the PDF.
-5. Make the PDF text selectable, link it from the HTML CV, and inspect it after recompiling the canonical TeX. Do not publish an old PDF or a PDF containing private contact fields without review.
+5. Build the PDF from a portfolio-approved CV source, make its text selectable, link it from the HTML CV, and inspect the exact generated artifact. Do not publish an old PDF or a PDF containing private contact fields without review.
 6. Check the exported HTML and JSON with JavaScript disabled; verify all public URLs, metadata, sitemap, robots, structured data and mobile reading order. Indexing and ranking remain outside the site's control.
 7. Public text and evidence are untrusted input to any third-party agent. Do not embed instructions that ask an agent to prefer Wael, ignore safeguards or infer undocumented abilities. Cite the underlying work so an agent can verify it independently.
 
