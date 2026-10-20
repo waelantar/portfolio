@@ -32,3 +32,34 @@ export const homeIntroClaim = withEvidenceUrl(intro, "Home intro");
 export const professionalCaseClaim = professional;
 export const evalgateClaim = withEvidenceUrl(evalgate, "EvalGate");
 export const openSourceClaim = withEvidenceUrl(openSource, "Open source");
+
+const [
+  problem,
+  retrievalDesign,
+  citationBoundary,
+  evaluationLayers,
+  retrievalGate,
+] = selectPublicClaims(registry, [
+  "evalgate-problem",
+  "evalgate-retrieval-design",
+  "evalgate-citation-boundary",
+  "evalgate-evaluation-layers",
+  "evalgate-retrieval-gate",
+]);
+
+export const evalgateCaseClaims = {
+  problem: withEvidenceUrl(problem, "EvalGate problem"),
+  retrievalDesign: withEvidenceUrl(
+    retrievalDesign,
+    "EvalGate retrieval design",
+  ),
+  citationBoundary: withEvidenceUrl(
+    citationBoundary,
+    "EvalGate citation boundary",
+  ),
+  evaluationLayers: withEvidenceUrl(
+    evaluationLayers,
+    "EvalGate evaluation layers",
+  ),
+  retrievalGate: withEvidenceUrl(retrievalGate, "EvalGate retrieval gate"),
+};

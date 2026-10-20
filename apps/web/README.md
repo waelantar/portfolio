@@ -1,6 +1,6 @@
 # Static web scaffold
 
-PF-005 provides a Next.js App Router application with a static export. PF-008 adds Home and concise professional and EvalGate evidence routes. This is not the finished portfolio or a published site. Pages remain noindex until complete proof pages and release review pass.
+PF-005 provides a Next.js App Router application with a static export. PF-008 adds Home and concise evidence routes. PF-009 expands EvalGate into a source-backed case study. This is not the finished portfolio or a published site. Pages remain noindex until complete proof pages and release review pass.
 
 Run from the repository root:
 
@@ -30,4 +30,4 @@ Home reads its approved professional sentence and evidence URL from `content/cla
 
 ## Home and evidence routes
 
-The first screen shows approved professional scope, links to three proof categories and a direct email action. The professional and EvalGate routes are intentionally concise; PF-011 and PF-009 will expand them. See `../../docs/PF-008-HOME-REVIEW.md` for content boundaries and local browser checks.
+The first screen shows approved professional scope, links to three proof categories and a direct email action. The professional route remains concise pending PF-011. The EvalGate route now covers architecture, evaluation and release limits. See `../../docs/PF-008-HOME-REVIEW.md` and `../../docs/PF-009-EVALGATE-REVIEW.md` for content boundaries and local browser checks.

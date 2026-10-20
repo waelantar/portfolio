@@ -116,6 +116,76 @@
       "verifiedAt": "2026-10-20",
       "publication": "approved",
       "note": "GitHub PR authored by waelantar and merged on 2026-06-24. The changed files are Python pairing-store code and tests."
+    },
+    {
+      "id": "evalgate-problem",
+      "category": "released_personal_project",
+      "statement": "EvalGate is designed to catch retrieval, grounding and citation regressions before release.",
+      "contributionOwner": "Wael Antar",
+      "scope": "Personal open-source system at v1.0.0; the goal does not imply production adoption or measured user impact.",
+      "evidenceUrl": "https://github.com/waelantar/evalgate/blob/v1.0.0/README.md",
+      "reviewState": "approved",
+      "sourceCheck": "public_release_verified",
+      "lastCheckedAt": "2026-10-20",
+      "verifiedAt": "2026-10-20",
+      "publication": "approved",
+      "note": "Verified against the tagged v1.0.0 README and release. Describes project purpose, not an outcome claim."
+    },
+    {
+      "id": "evalgate-retrieval-design",
+      "category": "released_personal_project",
+      "statement": "The v1.0.0 search path ranks PostgreSQL full-text and exact pgvector cosine candidates separately, then fuses their ranks with a versioned reciprocal-rank policy and deterministic tie-breaking.",
+      "contributionOwner": "Wael Antar",
+      "scope": "Implemented source design for a selected, versioned index; no BM25, approximate nearest-neighbour index, reranker, performance win or relevance threshold is claimed.",
+      "evidenceUrl": "https://github.com/waelantar/evalgate/blob/v1.0.0/docs/adr/0003-hybrid-retrieval.md",
+      "reviewState": "approved",
+      "sourceCheck": "public_release_verified",
+      "lastCheckedAt": "2026-10-20",
+      "verifiedAt": "2026-10-20",
+      "publication": "approved",
+      "note": "Cross-checked with tagged postgres_search.py, application/search.py and domain/search.py."
+    },
+    {
+      "id": "evalgate-citation-boundary",
+      "category": "released_personal_project",
+      "statement": "The grounded-answer path bounds the evidence context and validates returned citation IDs against retrieved evidence before constructing citations.",
+      "contributionOwner": "Wael Antar",
+      "scope": "Source-level contract and local checks; this is not a claim that live model answers are consistently correct.",
+      "evidenceUrl": "https://github.com/waelantar/evalgate/blob/v1.0.0/apps/api/src/evalgate/application/answer.py",
+      "reviewState": "approved",
+      "sourceCheck": "public_release_verified",
+      "lastCheckedAt": "2026-10-20",
+      "verifiedAt": "2026-10-20",
+      "publication": "approved",
+      "note": "Checked context budget and stored-evidence citation lookup in the tagged implementation."
+    },
+    {
+      "id": "evalgate-evaluation-layers",
+      "category": "released_personal_project",
+      "statement": "EvalGate separates fixture contract tests, repeatable retrieval evaluation and protected live-generation evaluation because each answers a different quality question.",
+      "contributionOwner": "Wael Antar",
+      "scope": "Fixture checks verify mechanics; they do not establish answer quality. Live judge results are advisory until calibrated against human labels.",
+      "evidenceUrl": "https://github.com/waelantar/evalgate/blob/v1.0.0/docs/adr/0006-evaluation-layers.md",
+      "reviewState": "approved",
+      "sourceCheck": "public_release_verified",
+      "lastCheckedAt": "2026-10-20",
+      "verifiedAt": "2026-10-20",
+      "publication": "approved",
+      "note": "Accepted tagged ADR; the release record keeps live-provider artifacts limitation-heavy."
+    },
+    {
+      "id": "evalgate-retrieval-gate",
+      "category": "released_personal_project",
+      "statement": "The v1.0.0 release record reports that its unchanged, reviewed 36-case Northstar retrieval baseline passed in local validation.",
+      "contributionOwner": "Wael Antar",
+      "scope": "Release-recorded local retrieval result, not a rerun by this portfolio or proof of hosted generation quality.",
+      "evidenceUrl": "https://github.com/waelantar/evalgate/blob/v1.0.0/docs/release/READINESS.md",
+      "reviewState": "approved",
+      "sourceCheck": "public_release_verified",
+      "lastCheckedAt": "2026-10-20",
+      "verifiedAt": "2026-10-20",
+      "publication": "approved",
+      "note": "Checked tagged readiness record and GitHub Release. No live-generation success or deployment inferred."
     }
   ]
 }
