@@ -6,6 +6,8 @@ Build a public technical portfolio that makes Wael's verified work easy to inspe
 
 Start with `README.md`, `docs/BACKLOG.md`, `docs/DECISIONS.md`, `SECURITY.md` and `docs/RESILIENCE.md`. Use the role cards in `agents/` when dividing work. Repository-local skills in `.agents/skills/` guide delivery and security reviews; they do not grant permission to publish or contact anyone.
 
+For search and agent readability, use `docs/DISCOVERY.md`. `content/claims.json` is the claim intake registry: a draft or held entry is not publishable. Future HTML, PDF, metadata, structured data and `/evidence.json` must derive from approved public claims only. The public site must remain readable without JavaScript; `AGENTS.md` is for repository contributors, not a substitute for the web CV.
+
 ## Truth and privacy boundary
 
 - This is a clean publication repository. Add only reviewed public facts, original assets and synthetic/redrawn examples. Never copy non-public workspaces, agreements, personal records, customer material, internal source, logs, mailbox, credentials or Git history into it, including as fixtures or generated output.

@@ -14,6 +14,7 @@
 | D-008 | Make security an explicit product feature with a threat model, claim gate, secret boundary and reviewed failure states. | A portfolio that leaks private material or invents agent behaviour undermines the proof it is meant to provide. Controls must be implemented and tested before being claimed. |
 | D-009 | Prepare a second static host on Cloudflare Pages using controlled Direct Upload of the last approved build, with a separate public URL. | A Netlify outage or free-plan pause should leave a reachable primary reading path. Direct Upload avoids mirroring an unreviewed `main` change. Without a paid/custom domain there is no automatic transparent failover; backup links and supervision are required. |
 | D-010 | Keep the verified trace as the safe fallback for every model failure. | The first site has no runtime model dependency. A later live assistant will pin/evaluate a model and stop live answers on model removal, quota, timeout or unsafe output rather than silently changing behaviour. |
+| D-011 | Make the HTML CV and evidence pages the canonical public reading path; generate a filtered JSON evidence index from the same approved claims. | Readers and heterogeneous agents can read stable text and direct proof without executing JavaScript. PDF, sitemap, metadata and optional `llms.txt` are supporting paths. These files improve discoverability but cannot guarantee search ranking or bot indexing. |
 
 ## Open decisions
 
