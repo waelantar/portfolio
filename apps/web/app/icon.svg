@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Wael Antar">
+  <rect width="64" height="64" rx="15" fill="#0b0d11"/>
+  <path d="M12 39h15l7-15h18" fill="none" stroke="#ff7a33" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="52" cy="24" r="4" fill="#ff7a33"/>
+</svg>

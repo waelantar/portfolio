@@ -7,6 +7,7 @@
 
 # JavaScript / Next.js output
 node_modules/
+*.tsbuildinfo
 .next/
 out/
 dist/

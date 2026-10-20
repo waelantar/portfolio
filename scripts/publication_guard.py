@@ -7,6 +7,7 @@ It prints rule names and relative file paths, never the matched content.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import os
 import re
 import sys
@@ -18,6 +19,10 @@ BLOCKED_PARTS = {"contract", "contracts", "mailbox", "private", "secrets", "reco
 BLOCKED_NAMES = {".npmrc", "id_rsa", "id_ed25519", "credentials.json", "service-account.json"}
 BLOCKED_SUFFIXES = {".pem", ".p12", ".pfx", ".sqlite", ".sqlite3", ".db"}
 MAX_FILE_BYTES = 2_000_000
+REVIEWED_BINARY_SHA256 = {
+    "apps/web/public/images/wael-antar-portrait.webp": "7796dbe14938cb1817078fed3e9b83b3d79b9b6fcb41c083ef5ba2fe795655d4",
+    "apps/web/out/images/wael-antar-portrait.webp": "7796dbe14938cb1817078fed3e9b83b3d79b9b6fcb41c083ef5ba2fe795655d4",
+}
 
 # Assemble token prefixes so this scanner does not flag its own source text.
 CONTENT_RULES = {
@@ -78,6 +83,17 @@ def inspect_tree(root: Path) -> list[tuple[str, str]]:
             if size > MAX_FILE_BYTES:
                 findings.append(("large-file-needs-manual-review", rel.as_posix()))
                 continue
+            expected_hash = REVIEWED_BINARY_SHA256.get(rel.as_posix())
+            if expected_hash is not None:
+                try:
+                    actual_hash = hashlib.sha256(path.read_bytes()).hexdigest()
+                except OSError:
+                    findings.append(("unreadable-file", rel.as_posix()))
+                    continue
+                if actual_hash != expected_hash:
+                    findings.append(("reviewed-binary-changed", rel.as_posix()))
+                continue
+
             try:
                 content = path.read_text(encoding="utf-8")
             except (UnicodeDecodeError, OSError):
