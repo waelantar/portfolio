@@ -1,0 +1,29 @@
+# Local secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# JavaScript / Next.js output
+node_modules/
+.next/
+out/
+dist/
+coverage/
+.turbo/
+
+# Local data, logs and editor files
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.sqlite
+*.sqlite3
+tmp/
+.cache/
+
+# Python helper/test cache
+__pycache__/
+*.pyc
