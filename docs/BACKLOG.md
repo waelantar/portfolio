@@ -20,7 +20,7 @@ Priority: **P0** is required for the first public release; **P1** improves the r
 | --- | --- | --- | --- | --- |
 | PF-001 | P0; DONE | Build an approved claim registry for professional work, EvalGate and merged OSS; record provenance, status, owner and public link or approved privacy-safe explanation. `content/claims.json` holds approved source copy; `docs/CLAIM-REVIEW.md` records public-source checks and wording approval. | Every featured sentence can be checked; public links and employer wording are approved before any entry changes from hold; planned work has a visible planned label. | — |
 | PF-002 | P0; DONE (PDF HELD) | Recheck public project, release, PR and contact links; compile and inspect a current CV PDF before linking it. Public checks and the private audit decision are recorded in `docs/PF-002-LINK-CV-AUDIT.md`; no PDF is linked. | Links and CV reflect current verified facts; stale or unverified claims are withheld. | PF-001 |
-| PF-003 | P0 | Review employer case-study wording and media for confidentiality. | Approved prose has no internal code, screenshots, customer details, compensation or private metrics. | PF-001 |
+| PF-003 | P0; IN REVIEW (OWNER APPROVAL PENDING) | Review employer case-study wording and media for confidentiality. The approved general sentence and current holds are recorded in docs/PF-003-EMPLOYER-CASE-REVIEW.md. | Approved prose has no internal code, screenshots, customer details, compensation or private metrics. | PF-001 |
 | PF-004 | P0 | Design two mood frames, desktop/mobile hero, case-study panel, trace state and reduced-motion storyboard. | Wael can recognize the analytical/playful direction; work, proof and contact remain legible at a glance. | PF-001 |
 
 ### Security foundation (release blocking)
