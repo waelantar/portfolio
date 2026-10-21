@@ -5,11 +5,13 @@
   "scripts": {
     "dev": "npm run dev --workspace @waelantar/portfolio-web",
     "build": "npm run build --workspace @waelantar/portfolio-web",
+    "build:secure": "npm run build && python -m scripts.static_security --write",
     "typecheck": "npm run typecheck --workspace @waelantar/portfolio-web",
     "format": "prettier --write \"apps/web/**/*.{css,js,json,md,ts,tsx}\"",
     "format:check": "prettier --check \"apps/web/**/*.{css,js,json,md,ts,tsx}\"",
     "test:claims": "node --experimental-strip-types --test tests/claim-validation.test.mjs",
-    "check": "npm run format:check && npm run typecheck && npm run test:claims && npm run build"
+    "test:security": "python -m unittest discover -s tests -p test_*.py",
+    "check": "python scripts/publication_guard.py --tree . && npm run format:check && npm run typecheck && npm run test:claims && npm run test:security && npm run build:secure && python -m scripts.static_security"
   },
   "devDependencies": {
     "prettier": "3.9.10"

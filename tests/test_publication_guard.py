@@ -59,6 +59,14 @@ class PublicationGuardTests(unittest.TestCase):
                 {rule for rule, _ in inspect_tree(Path(tmp))},
             )
 
+    def test_reviewed_portrait_passes_when_export_is_tree_root(self):
+        source = Path(__file__).resolve().parents[1] / "apps/web/public/images/wael-antar-portrait.webp"
+        with tempfile.TemporaryDirectory() as tmp:
+            image = Path(tmp, "images", source.name)
+            image.parent.mkdir(parents=True)
+            image.write_bytes(source.read_bytes())
+            self.assertEqual(inspect_tree(Path(tmp)), [])
+
     def test_flags_opaque_asset_for_review(self):
         with tempfile.TemporaryDirectory() as tmp:
             Path(tmp, "unreviewed.bin").write_bytes(bytes([0xFF, 0x00, 0xFE]))

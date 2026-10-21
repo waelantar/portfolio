@@ -1,6 +1,6 @@
 # Portfolio product backlog
 
-**Updated:** 2026-10-20. **Current state:** PF-005 through PF-009 are merged; PF-026 security-source review is complete locally for PR review. PF-004 art direction is selected: Signal Route structure with warm editorial light theme. PF-003 employer copy and the illustrative-media boundary are approved; only a concise local evidence route exists, with detailed case study and media still pending. PF-002 public links were checked and the existing CV PDF was withheld after a private audit; PF-032 owns the portfolio-specific PDF. PF-001's original eight registry entries and PF-009's five source-backed entries have verified public sources or owner-confirmed professional wording; their exact future rendering remains subject to release review. `main` is protected. The full site, monitoring, backup hosting and deployment remain pending. This backlog is a plan, so unchecked work is not shipped proof.
+**Updated:** 2026-10-21. **Current state:** PF-005 through PF-009 and PF-026 are merged; PF-027 initial CI passed and an independent source review found a bypass that was fixed locally; revised CI and hosted-header verification remain pending. PF-004 art direction is selected: Signal Route structure with warm editorial light theme. PF-003 employer copy and the illustrative-media boundary are approved; only a concise local evidence route exists, with detailed case study and media still pending. PF-002 public links were checked and the existing CV PDF was withheld after a private audit; PF-032 owns the portfolio-specific PDF. PF-001's original eight registry entries and PF-009's five source-backed entries have verified public sources or owner-confirmed professional wording; their exact future rendering remains subject to release review. `main` is protected. The full site, monitoring, backup hosting and deployment remain pending. This backlog is a plan, so unchecked work is not shipped proof.
 
 ## Product goal and release rules
 
@@ -28,7 +28,7 @@ Priority: **P0** is required for the first public release; **P1** improves the r
 | ID | Priority | Work | Done when | Depends on |
 | --- | --- | --- | --- | --- |
 | PF-026 | P0; DONE (LOCAL AUDIT) | Validate and maintain the threat model, data classification and publication boundary in `SECURITY.md`; see docs/PF-026-THREAT-REVIEW.md. | Security reviewer has checked actual source risks and a second reviewer confirms no private-source path is required by the build. | PF-001 |
-| PF-027 | P0 | Implement repo/build security gates: dependency lock, least-privilege CI, pinned Actions, secret/private-path scan, content validation and tested static security headers. | CI and a **separate security reviewer** catch a planted synthetic secret/private path and unsafe rendered content; deployed response headers are verified. | PF-005, PF-007, PF-026 |
+| PF-027 | P0; LOCAL FIX REVIEWED, CI/HOSTED CHECK PENDING | Implement repo/build security gates: dependency lock, least-privilege CI, pinned Actions, secret/private-path scan, content validation and tested static security headers. See `docs/PF-027-SECURITY-GATES.md`. | CI and a **separate security reviewer** catch a planted synthetic secret/private path and unsafe rendered content; deployed response headers are verified. | PF-005, PF-007, PF-026 |
 
 ### M1 — Portfolio vertical slice (6–9 h)
 
