@@ -22,6 +22,7 @@ MAX_FILE_BYTES = 2_000_000
 REVIEWED_BINARY_SHA256 = {
     "apps/web/public/images/wael-antar-portrait.webp": "7796dbe14938cb1817078fed3e9b83b3d79b9b6fcb41c083ef5ba2fe795655d4",
     "apps/web/out/images/wael-antar-portrait.webp": "7796dbe14938cb1817078fed3e9b83b3d79b9b6fcb41c083ef5ba2fe795655d4",
+    "images/wael-antar-portrait.webp": "7796dbe14938cb1817078fed3e9b83b3d79b9b6fcb41c083ef5ba2fe795655d4",
 }
 
 # Assemble token prefixes so this scanner does not flag its own source text.
