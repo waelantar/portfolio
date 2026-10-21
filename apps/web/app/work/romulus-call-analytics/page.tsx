@@ -3,12 +3,13 @@ import { SiteFooter, SiteHeader } from "../../../components/SiteChrome";
 import {
   professionalCaseClaim,
   professionalDecisionClaim,
+  professionalEpicClaim,
 } from "../../../lib/public-claims";
 
 export const metadata: Metadata = {
   title: "Call analytics frontend | Wael Antar",
   description:
-    "An approved account of Angular and TypeScript frontend ownership for a call analytics experience, with an original illustrative interaction map.",
+    "An approved account of end-to-end Angular and TypeScript frontend engineering for a call analytics experience, with original illustrative diagrams.",
 };
 
 const experienceSteps = [
@@ -53,6 +54,33 @@ const dataStates = [
   },
 ] as const;
 
+const engineeringQuestions = [
+  {
+    number: "01",
+    label: "Meaning",
+    question: "What does this displayed figure count?",
+    principle: "A precise definition belongs beside the visual choice.",
+  },
+  {
+    number: "02",
+    label: "Performance + correctness",
+    question: "Does this result still belong to the current filter?",
+    principle: "Older work should not overwrite the latest choice.",
+  },
+  {
+    number: "03",
+    label: "Navigation",
+    question: "Can a reader move from summary to an inspectable result?",
+    principle: "The path into detail should keep the question in view.",
+  },
+  {
+    number: "04",
+    label: "Boundaries",
+    question: "What happens when time or view state changes?",
+    principle: "Time and view changes deserve deliberate edge checks.",
+  },
+] as const;
+
 export default function ProfessionalCasePage() {
   return (
     <main className="shell">
@@ -75,7 +103,7 @@ export default function ProfessionalCasePage() {
           >
             <div>
               <span>My scope</span>
-              <strong>Angular / TypeScript frontend</strong>
+              <strong>Angular / TypeScript frontend epic, end to end</strong>
             </div>
             <div>
               <span>Experience</span>
@@ -88,11 +116,15 @@ export default function ProfessionalCasePage() {
           </div>
         </header>
 
-        <nav className="case-jump" aria-label="On this case study">
+        <nav
+          className="case-jump professional-jump"
+          aria-label="On this case study"
+        >
           <a href="#scope">01 / Scope</a>
           <a href="#journey">02 / Journey</a>
-          <a href="#states">03 / States</a>
-          <a href="#evidence">04 / Evidence</a>
+          <a href="#engineering">03 / Engineering</a>
+          <a href="#states">04 / States</a>
+          <a href="#evidence">05 / Evidence</a>
         </nav>
 
         <section
@@ -101,14 +133,8 @@ export default function ProfessionalCasePage() {
           aria-labelledby="scope-title"
         >
           <p className="case-kicker">01 / What I owned</p>
-          <h2 id="scope-title">The frontend experience.</h2>
-          <p className="case-copy">{professionalCaseClaim.scope}</p>
-          <p className="case-copy">
-            The approved account covers summary views, filters and drill-downs,
-            plus loading, empty and error states. It also covers responsive and
-            accessible checks and release feedback. I did not own the backend
-            data APIs or AI model runtime.
-          </p>
+          <h2 id="scope-title">The frontend epic, end to end.</h2>
+          <p className="case-copy">{professionalEpicClaim.statement}</p>
         </section>
 
         <section
@@ -157,10 +183,45 @@ export default function ProfessionalCasePage() {
 
         <section
           className="case-section"
+          id="engineering"
+          aria-labelledby="engineering-title"
+        >
+          <p className="case-kicker">03 / Engineering notes</p>
+          <h2 id="engineering-title">Meaning first. Then a current answer.</h2>
+          <p className="case-copy">
+            The work connected what a number means to what a reader sees after
+            changing a filter or moving into detail. These four questions make
+            that engineering scope easier to inspect. They are an editorial
+            abstraction, not the product&apos;s implementation.
+          </p>
+          <figure className="professional-engineering-map">
+            <figcaption>
+              Original illustrative decision map. No product screen, internal
+              architecture, real data or measured performance result.
+            </figcaption>
+            <ol className="professional-engineering-questions">
+              {engineeringQuestions.map((item) => (
+                <li key={item.number}>
+                  <span className="professional-engineering-number">
+                    {item.number}
+                  </span>
+                  <span className="professional-engineering-label">
+                    {item.label}
+                  </span>
+                  <strong>{item.question}</strong>
+                  <p>{item.principle}</p>
+                </li>
+              ))}
+            </ol>
+          </figure>
+        </section>
+
+        <section
+          className="case-section"
           id="states"
           aria-labelledby="states-title"
         >
-          <p className="case-kicker">03 / Data conditions</p>
+          <p className="case-kicker">04 / Data conditions</p>
           <h2 id="states-title">
             Different conditions need different signals.
           </h2>
@@ -188,7 +249,7 @@ export default function ProfessionalCasePage() {
           id="evidence"
           aria-labelledby="evidence-title"
         >
-          <p className="case-kicker">04 / Verification and limits</p>
+          <p className="case-kicker">05 / Verification and limits</p>
           <h2 id="evidence-title">Care in the details.</h2>
           <p className="case-copy">
             I checked responsive and accessible behaviour and addressed release

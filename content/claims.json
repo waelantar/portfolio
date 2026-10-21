@@ -34,6 +34,22 @@
       "note": "The revised paragraph supersedes an earlier draft. No employer screenshots, brand assets, customer data, internal diagrams or metrics are approved. A separately reviewed original illustration may use invented values."
     },
     {
+      "id": "romulus-call-analytics-epic",
+      "category": "professional",
+      "statement": "I implemented the call analytics frontend epic end to end: views, filters, drill-downs, data states, responsive and accessible behaviour, tests, and release feedback. I checked what displayed figures meant, kept changing filters from showing stale results, and worked through time-based and navigation edge cases. Chart selection and the division across views were shared decisions. I did not own the backend APIs or AI model runtime.",
+      "contributionOwner": "Wael Antar",
+      "scope": "Owner-confirmed end-to-end implementation of the frontend epic; chart selection and division across views were shared decisions. No backend API, AI runtime, proprietary implementation, internal data or measured performance outcome is claimed.",
+      "evidenceUrl": null,
+      "privacySafeExplanation": "Wael confirmed end-to-end frontend epic ownership after reviewing a generalized write-up checked against project tasks, code, Git history and memory. He approved this exact public wording on 2026-10-21. No non-public project artifact was imported.",
+      "publicContextUrl": "https://us.romulus.live/",
+      "reviewState": "approved",
+      "sourceCheck": "owner_confirmed_confidential_work_review",
+      "lastCheckedAt": "2026-10-21",
+      "verifiedAt": "2026-10-21",
+      "publication": "approved",
+      "note": "The generalized source write-up remains outside this repository. Do not turn its detailed metric, data-flow, time-window, accessibility or test examples into public claims without separate exact wording review. No performance benchmark is approved."
+    },
+    {
       "id": "romulus-call-analytics-chart-decision",
       "category": "professional",
       "statement": "I took part in choosing chart types and deciding how call analytics data was divided across views. The aim was to make the move from overview to detail easier to read.",

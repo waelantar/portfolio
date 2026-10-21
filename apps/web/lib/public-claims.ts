@@ -8,14 +8,21 @@ import {
 const registry = validateClaimRegistry(rawRegistry);
 
 // Featured page content is explicitly selected from the approved registry.
-const [intro, professional, professionalDecision, evalgate, openSource] =
-  selectPublicClaims(registry, [
-    "romulus-product-frontend",
-    "romulus-call-analytics-frontend",
-    "romulus-call-analytics-chart-decision",
-    "evalgate-source-release",
-    "twenty-pr-26787",
-  ]);
+const [
+  intro,
+  professional,
+  professionalEpic,
+  professionalDecision,
+  evalgate,
+  openSource,
+] = selectPublicClaims(registry, [
+  "romulus-product-frontend",
+  "romulus-call-analytics-frontend",
+  "romulus-call-analytics-epic",
+  "romulus-call-analytics-chart-decision",
+  "evalgate-source-release",
+  "twenty-pr-26787",
+]);
 
 function withEvidenceUrl(
   claim: PublicClaim,
@@ -29,6 +36,7 @@ function withEvidenceUrl(
 
 export const homeIntroClaim = withEvidenceUrl(intro, "Home intro");
 export const professionalCaseClaim = professional;
+export const professionalEpicClaim = professionalEpic;
 export const professionalDecisionClaim = professionalDecision;
 export const evalgateClaim = withEvidenceUrl(evalgate, "EvalGate");
 export const openSourceClaim = withEvidenceUrl(openSource, "Open source");

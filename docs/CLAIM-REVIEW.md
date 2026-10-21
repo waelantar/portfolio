@@ -25,3 +25,7 @@ Wael approved this exact sentence on 2026-10-20. The seven registry entries may 
 ## PF-011 shared-decision extension, 2026-10-21
 
 Claim `romulus-call-analytics-chart-decision` adds the owner's approved sentence: “I took part in choosing chart types and deciding how call analytics data was divided across views.” The owner selected easier overview-to-detail reading as the general reason. The registry renders the sentence with that reason and explicitly limits it to participation in a shared frontend decision. No chart specification, data category, customer metric, employer artifact or sole design ownership is supported. The final rendered page still needs artifact review before publication.
+
+## PF-011 frontend epic extension, 2026-10-21
+
+Wael confirmed that he implemented the frontend epic end to end. He reported that the generalized write-up was checked against project tasks, code, Git history and memory, then approved the exact public wording in claim `romulus-call-analytics-epic`. The claim covers frontend implementation, tests, release feedback, the meaning of displayed figures, stale filtered results and time-based/navigation edge cases. It preserves shared chart decisions and excludes backend APIs and the AI runtime. The source write-up is not stored here. Its implementation examples, internal data, chart specifications and any performance measurement remain outside the public claim boundary.
