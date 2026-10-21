@@ -11,6 +11,15 @@ class PublicationGuardTests(unittest.TestCase):
             Path(tmp, "README.md").write_text("A reviewed public page.\n", encoding="utf-8")
             self.assertEqual(inspect_tree(Path(tmp)), [])
 
+    def test_worktree_git_pointer_is_not_publication_content(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            git_pointer = "gitdir: C:" + "/" + "Users/example/work/.git/worktrees/site\n"
+            Path(tmp, ".git").write_text(git_pointer, encoding="utf-8")
+            Path(tmp, "page.md").write_text("A reviewed public page.\n", encoding="utf-8")
+            self.assertEqual(inspect_tree(Path(tmp)), [])
+            Path(tmp, "page.md").write_text("C:" + "/" + "Users/example/private", encoding="utf-8")
+            self.assertIn("Windows-home-path", {rule for rule, _ in inspect_tree(Path(tmp))})
+
     def test_flags_secret_and_private_file_without_returning_secret(self):
         with tempfile.TemporaryDirectory() as tmp:
             secret = "sk" + "-or-" + "A" * 24  # Synthetic value, never a real credential.
