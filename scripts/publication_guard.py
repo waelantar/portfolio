@@ -63,6 +63,9 @@ def inspect_tree(root: Path) -> list[tuple[str, str]]:
         for filename in sorted(filenames):
             path = Path(directory, filename)
             rel = path.relative_to(root)
+            if rel.parts == (".git",):
+                # A worktree stores a local Git pointer here; it is not published.
+                continue
             if path.is_symlink():
                 findings.append(("symlink-needs-review", rel.as_posix()))
                 continue
