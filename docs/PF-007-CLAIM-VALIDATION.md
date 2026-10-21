@@ -17,3 +17,7 @@ A held entry may remain in the registry, but `selectPublicClaims` refuses to ren
 - The existing publication guard and its tests passed.
 
 PF-027 still owns broader content safety and CI gates. PF-033 will create the filtered public evidence index; this task does not publish one. The full site remains noindex until release review.
+
+## PF-012 category extension
+
+`public_personal_repository` requires `public_repository_verified` provenance. This separates a public source repository from a tagged personal release and from a merged third-party PR. A claim using release provenance for this category fails validation. See `docs/PF-012-OSS-REVIEW.md` for the current supporting-source checks.

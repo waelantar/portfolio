@@ -2,6 +2,7 @@ export const claimCategories = [
   "professional",
   "released_personal_project",
   "merged_open_source",
+  "public_personal_repository",
 ] as const;
 
 export type ClaimCategory = (typeof claimCategories)[number];
@@ -49,6 +50,7 @@ const provenanceByCategory: Record<ClaimCategory, readonly string[]> = {
   ],
   released_personal_project: ["public_release_verified"],
   merged_open_source: ["public_merged_pr_verified"],
+  public_personal_repository: ["public_repository_verified"],
 };
 
 function fail(path: string, reason: string): never {
