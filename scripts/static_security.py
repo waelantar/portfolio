@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import base64
 import hashlib
+import json
 import re
 import sys
 from html.parser import HTMLParser
@@ -96,12 +97,42 @@ class PageAudit(HTMLParser):
 
 
 def expected_inline_script(script: str, attrs: dict[str, str]) -> bool:
-    if attrs.get("id") == "_R_":
-        return script.startswith('(globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push(')
-    if attrs.get("id"):
+    bootstrap = "(self.__next_f=self.__next_f||[]).push([0])"
+    if attrs == {} and script == bootstrap:
+        return True
+
+    if attrs == {"id": "_R_"}:
+        prefix = '(globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push('
+        if not script.startswith(prefix) or not script.endswith(");"):
+            return False
+        try:
+            payload = json.loads(script[len(prefix) : -2])
+        except (ValueError, TypeError):
+            return False
+        return (
+            isinstance(payload, dict)
+            and set(payload) == {"otherChunks", "runtimeModuleIds"}
+            and isinstance(payload["otherChunks"], list)
+            and all(isinstance(item, str) for item in payload["otherChunks"])
+            and isinstance(payload["runtimeModuleIds"], list)
+            and all(type(item) is int for item in payload["runtimeModuleIds"])
+        )
+
+    if attrs != {}:
         return False
-    return script == "(self.__next_f=self.__next_f||[]).push([0])" or script.startswith(
-        'self.__next_f.push([1,"'
+    prefix = "self.__next_f.push("
+    if not script.startswith(prefix) or not script.endswith(")"):
+        return False
+    try:
+        payload = json.loads(script[len(prefix) : -1])
+    except (ValueError, TypeError):
+        return False
+    return (
+        isinstance(payload, list)
+        and len(payload) == 2
+        and type(payload[0]) is int
+        and payload[0] == 1
+        and isinstance(payload[1], str)
     )
 
 

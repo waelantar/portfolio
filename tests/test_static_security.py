@@ -41,6 +41,18 @@ class StaticSecurityTests(unittest.TestCase):
             self.assertIn("'sha256-", headers)
             self.assertNotIn("script-src 'self' 'unsafe-inline'", headers)
 
+    def test_rejects_code_appended_to_next_data_script(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp)
+            (out / "index.html").write_text(
+                '<script>self.__next_f.push([1,"synthetic"]);'
+                'document.body.dataset.injected="yes"</script>',
+                encoding="utf-8",
+            )
+            findings, hashes = audit_artifact(out)
+            self.assertIn("unexpected-inline-script", {rule for rule, _ in findings})
+            self.assertEqual(hashes, set())
+
     def test_rejects_active_svg(self):
         self.assertIn(
             "active-svg-element",

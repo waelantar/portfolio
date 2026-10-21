@@ -1,6 +1,6 @@
 # Security policy and release gate
 
-**Status:** PF-026 threat model reviewed against the current static source and a clean local build on 20 October 2026. PF-027 adds local source/artifact audit, a read-only pinned CI workflow and generated static response headers on a review branch. CI execution, independent security review and deployed response-header verification are pending. Backup hosting, monitoring and live-agent controls remain planned. There is no externally deployed site, API or security certification.
+**Status:** PF-026 threat model reviewed against the current static source and a clean local build on 20 October 2026. PF-027 adds local source/artifact audit, a read-only pinned CI workflow and generated static response headers on a review branch. Initial CI passed; a separate read-only reviewer found an inline-script bypass that was fixed and rechecked locally. CI for that fix and deployed response-header verification are pending. Backup hosting, monitoring and live-agent controls remain planned. There is no externally deployed site, API or security certification.
 
 ## Assets and trust boundaries
 
