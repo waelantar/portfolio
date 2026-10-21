@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { SiteFooter, SiteHeader } from "../../../components/SiteChrome";
-import { professionalCaseClaim } from "../../../lib/public-claims";
+import {
+  professionalCaseClaim,
+  professionalDecisionClaim,
+} from "../../../lib/public-claims";
 
 export const metadata: Metadata = {
   title: "Call analytics frontend | Wael Antar",
@@ -120,6 +123,10 @@ export default function ProfessionalCasePage() {
             experience described above. The map below explains that sequence; it
             is not a capture of the product.
           </p>
+          <div className="case-decision">
+            <p className="case-decision-label">A shared frontend decision</p>
+            <p>{professionalDecisionClaim.statement}</p>
+          </div>
           <figure className="professional-map">
             <figcaption>
               Original illustrative diagram. Generic labels and layout; no
