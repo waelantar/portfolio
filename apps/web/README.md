@@ -10,7 +10,7 @@ Run from the repository root:
 - npm run test:claims
 - npm run build
 
-The output is apps/web/out. It needs only a static file host. No server, database, API key or visitor inference is part of this build.
+The output is apps/web/out. Root `netlify.toml` prepares this static export for a future Netlify preview and reruns the publication checks. No server, database, API key or visitor inference is part of this build.
 
 ## Portrait replacement contract
 
