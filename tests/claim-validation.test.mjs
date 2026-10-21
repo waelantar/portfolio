@@ -58,6 +58,24 @@ test("a featured claim needs recognized provenance and review dates", () => {
   );
 });
 
+test("a public source repository cannot borrow release provenance", () => {
+  const registry = validateClaimRegistry(original);
+  const [source] = selectPublicClaims(registry, [
+    "polyglot-engine-public-source",
+  ]);
+  assert.equal(source.category, "public_personal_repository");
+  assert.equal(source.proofKind, "public-link");
+  assert.throws(
+    () =>
+      validateClaimRegistry(
+        changedClaim("polyglot-engine-public-source", {
+          sourceCheck: "public_release_verified",
+        }),
+      ),
+    /recognized provenance and review dates/,
+  );
+});
+
 test("a published claim needs an approved review state", () => {
   assert.throws(
     () =>

@@ -8,21 +8,14 @@ import {
 const registry = validateClaimRegistry(rawRegistry);
 
 // Featured page content is explicitly selected from the approved registry.
-const [
-  intro,
-  professional,
-  professionalEpic,
-  professionalDecision,
-  evalgate,
-  openSource,
-] = selectPublicClaims(registry, [
-  "romulus-product-frontend",
-  "romulus-call-analytics-frontend",
-  "romulus-call-analytics-epic",
-  "romulus-call-analytics-chart-decision",
-  "evalgate-source-release",
-  "twenty-pr-26787",
-]);
+const [intro, professional, professionalEpic, professionalDecision, evalgate] =
+  selectPublicClaims(registry, [
+    "romulus-product-frontend",
+    "romulus-call-analytics-frontend",
+    "romulus-call-analytics-epic",
+    "romulus-call-analytics-chart-decision",
+    "evalgate-source-release",
+  ]);
 
 function withEvidenceUrl(
   claim: PublicClaim,
@@ -39,7 +32,41 @@ export const professionalCaseClaim = professional;
 export const professionalEpicClaim = professionalEpic;
 export const professionalDecisionClaim = professionalDecision;
 export const evalgateClaim = withEvidenceUrl(evalgate, "EvalGate");
-export const openSourceClaim = withEvidenceUrl(openSource, "Open source");
+
+const [
+  twentyGrouping,
+  twentyAutosave,
+  twentySelection,
+  nanobotDigest,
+  nanobotPairing,
+  polyglotSource,
+  telcoSource,
+] = selectPublicClaims(registry, [
+  "twenty-pr-26787",
+  "twenty-pr-26969",
+  "twenty-pr-27041",
+  "nanobot-pr-4352",
+  "nanobot-pr-4433",
+  "polyglot-engine-public-source",
+  "telco-agent-public-source",
+]);
+
+export const openSourceClaims = {
+  twenty: [
+    withEvidenceUrl(twentyGrouping, "Twenty grouping"),
+    withEvidenceUrl(twentyAutosave, "Twenty autosave"),
+    withEvidenceUrl(twentySelection, "Twenty selection"),
+  ],
+  nanobot: [
+    withEvidenceUrl(nanobotDigest, "nanobot digest"),
+    withEvidenceUrl(nanobotPairing, "nanobot pairing"),
+  ],
+} as const;
+
+export const supportingRepositoryClaims = [
+  withEvidenceUrl(polyglotSource, "Polyglot Engine"),
+  withEvidenceUrl(telcoSource, "Telco Troubleshooting Agent"),
+] as const;
 
 const [
   problem,

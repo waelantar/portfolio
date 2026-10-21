@@ -3,8 +3,8 @@ import { SiteFooter, SiteHeader } from "../components/SiteChrome";
 import {
   evalgateClaim,
   homeIntroClaim,
-  openSourceClaim,
   professionalCaseClaim,
+  supportingRepositoryClaims,
 } from "../lib/public-claims";
 
 const professionalLead = professionalCaseClaim.statement.split(". ")[0] + ".";
@@ -97,13 +97,41 @@ export default function HomePage() {
 
           <article className="work-card" id="open-source">
             <span className="card-number">03 / Merged open source</span>
-            <h3>Twenty groupBy</h3>
-            <p>{openSourceClaim.statement}</p>
-            <a href={openSourceClaim.evidenceUrl}>
-              Inspect the merged PR <span aria-hidden="true">↗</span>
+            <h3>Five merged contributions</h3>
+            <p>
+              Three fixes in Twenty and two in nanobot, each linked to its
+              merged pull request.
+            </p>
+            <a href="/work/open-source/">
+              Explore all five PRs <span aria-hidden="true">↗</span>
             </a>
           </article>
         </div>
+
+        <aside
+          className="supporting-work"
+          aria-labelledby="supporting-work-title"
+        >
+          <div>
+            <p className="card-number">Supporting source work</p>
+            <h3 id="supporting-work-title">
+              Two more repositories to inspect.
+            </h3>
+            <p>
+              Public personal source explorations, presented separately from
+              released projects and merged PRs.
+            </p>
+          </div>
+          <ul>
+            {supportingRepositoryClaims.map((claim) => (
+              <li key={claim.id}>
+                <a href={claim.evidenceUrl}>
+                  {claim.statement} <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </aside>
       </section>
 
       <section
