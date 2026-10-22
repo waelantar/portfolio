@@ -1,6 +1,6 @@
 # PF-027 security-gate implementation review
 
-**State:** merged through PR #13 on 21 October 2026. Independent read-only source review found an inline-script-prefix bypass; the fix passed local re-review and CI. Hosted response checks remain pending. No preview or site has been published.
+**State:** merged through PR #13 on 21 October 2026. Independent read-only source review found an inline-script-prefix bypass; the fix passed local re-review and CI. A private PF-010 Deploy Preview served the expected security headers on 22 October 2026. No public site has been released.
 
 ## Implemented
 
@@ -21,5 +21,5 @@
 ## Remaining release gates
 
 - The revised commit passed CI before merge. The read-only local reviewer did not approve a deployment; future changes still need source, history and artifact review.
-- PF-010 configures the host to execute the full `npm run check` gate and publish `apps/web/out`. Inspect the approved preview in a browser for CSP violations, theme, navigation and essential content. Verify the actual HTTP response headers; a generated `_headers` file alone does not prove host behaviour.
+- PF-010 configured the host to execute the full `npm run check` gate and publish `apps/web/out`. The approved private preview served the generated CSP, `nosniff`, permissions policy and `noindex`; the browser rendered Home and case-study deep links. Recheck the final production artifact before public release.
 - Keep source/history and media review on every later PR. Heuristic scans cannot establish that prose is true or that every credential format is detected.

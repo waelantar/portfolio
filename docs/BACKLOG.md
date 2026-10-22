@@ -1,6 +1,6 @@
 # Portfolio product backlog
 
-**Updated:** 2026-10-21. **Current state:** PF-005 through PF-009, PF-011, PF-012 and PF-026 are merged. PF-027 is merged with source review and CI complete; hosted response-header verification remains pending. PF-010's Netlify configuration is ready for local and PR review; a hosted preview remains pending. PF-004 art direction is selected: Signal Route structure with warm editorial light theme. PF-003 employer copy and the illustrative-media boundary are approved. PF-002 public links were checked and the existing CV PDF was withheld after a private audit; PF-032 owns the portfolio-specific PDF. PF-001's original eight registry entries and PF-009's five source-backed entries have verified public sources or owner-confirmed professional wording; their exact future rendering remains subject to release review. `main` is protected. The full site, monitoring, backup hosting and deployment remain pending. This backlog is a plan, so unchecked work is not shipped proof.
+**Updated:** 2026-10-22. **Current state:** PF-005 through PF-009, PF-011, PF-012 and PF-026 are merged. PF-027's source review, CI and private-preview response-header check have passed. PF-010 has a verified private Netlify Deploy Preview in draft PR #17; its configuration awaits merge. PF-004 art direction is selected: Signal Route structure with warm editorial light theme. PF-003 employer copy and the illustrative-media boundary are approved. PF-002 public links were checked and the existing CV PDF was withheld after a private audit; PF-032 owns the portfolio-specific PDF. PF-001's original eight registry entries and PF-009's five source-backed entries have verified public sources or owner-confirmed professional wording; their exact future rendering remains subject to release review. `main` is protected. Public release, monitoring and backup hosting remain pending. This backlog is a plan, so unchecked work is not shipped proof.
 
 ## Product goal and release rules
 
@@ -28,7 +28,7 @@ Priority: **P0** is required for the first public release; **P1** improves the r
 | ID | Priority | Work | Done when | Depends on |
 | --- | --- | --- | --- | --- |
 | PF-026 | P0; DONE (LOCAL AUDIT) | Validate and maintain the threat model, data classification and publication boundary in `SECURITY.md`; see docs/PF-026-THREAT-REVIEW.md. | Security reviewer has checked actual source risks and a second reviewer confirms no private-source path is required by the build. | PF-001 |
-| PF-027 | P0; MERGED SOURCE GATES, HOSTED CHECK PENDING | Implement repo/build security gates: dependency lock, least-privilege CI, pinned Actions, secret/private-path scan, content validation and tested static security headers. See `docs/PF-027-SECURITY-GATES.md`. | CI and a **separate security reviewer** catch a planted synthetic secret/private path and unsafe rendered content; deployed response headers are verified. | PF-005, PF-007, PF-026 |
+| PF-027 | P0; DONE (PRIVATE PREVIEW CHECK) | Implement repo/build security gates: dependency lock, least-privilege CI, pinned Actions, secret/private-path scan, content validation and tested static security headers. See `docs/PF-027-SECURITY-GATES.md`. | CI and a **separate security reviewer** catch a planted synthetic secret/private path and unsafe rendered content; deployed response headers are verified. | PF-005, PF-007, PF-026 |
 
 ### M1 — Portfolio vertical slice (6–9 h)
 
@@ -39,7 +39,7 @@ Priority: **P0** is required for the first public release; **P1** improves the r
 | PF-007 | P0; DONE (LOCAL IMPLEMENTATION) | Implement typed content and claim validation; see docs/PF-007-CLAIM-VALIDATION.md. | The build rejects a featured item missing provenance, review state and proof link or approved private-work explanation. | PF-001, PF-005 |
 | PF-008 | P0; DONE (LOCAL IMPLEMENTATION) | Build Home with headline, professional/personal proof, clear contact and direct case-study links; see docs/PF-008-HOME-REVIEW.md. | On mobile and desktop, the first screen identifies scope, evidence and contact; no skill inflation or hidden CTA. | PF-003, PF-006, PF-007 |
 | PF-009 | P0; DONE (LOCAL IMPLEMENTATION) | Build the EvalGate case study with release boundary, architecture, evaluation and public code/release links. | A reviewer can distinguish source release and local checks from a hosted customer product. | PF-002, PF-007 |
-| PF-010 | P0; LOCAL CONFIG READY, HOSTED PREVIEW PENDING | Add CI validation and a Netlify Free preview configuration; see `docs/PF-010-PREVIEW-SETUP.md`. | A PR checks type/build/content and a preview can be inspected without paid services or a public API. | PF-005, PF-007, PF-027 |
+| PF-010 | P0; PRIVATE PREVIEW VERIFIED, MERGE PENDING | Add CI validation and a Netlify Free preview configuration; see `docs/PF-010-PREVIEW-SETUP.md`. | A PR checks type/build/content and a preview can be inspected without paid services or a public API. | PF-005, PF-007, PF-027 |
 
 ### M2 — Complete the evidence journey (part of 8–11 h public-site finish)
 
