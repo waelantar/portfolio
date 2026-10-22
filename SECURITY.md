@@ -1,6 +1,6 @@
 # Security policy and release gate
 
-**Status:** PF-026 threat model reviewed against the current static source and a clean local build on 20 October 2026. PF-027 adds local source/artifact audit, a read-only pinned CI workflow and generated static response headers on a review branch. Initial CI passed; a separate read-only reviewer found an inline-script bypass that was fixed and rechecked locally. CI for that fix and deployed response-header verification are pending. Backup hosting, monitoring and live-agent controls remain planned. There is no externally deployed site, API or security certification.
+**Status:** PF-026 threat model reviewed against the current static source and a clean local build on 20 October 2026. PF-027 merged the local source/artifact audit, read-only pinned CI workflow and generated static response headers. A separate read-only reviewer found an inline-script bypass; the fix and CI passed. Deployed response-header verification remains pending. Backup hosting, monitoring and live-agent controls remain planned. There is no externally deployed site, API or security certification.
 
 ## Assets and trust boundaries
 
@@ -36,10 +36,10 @@ The public Git repository is itself a publication surface. A claim can be absent
 
 | Entry or actor | Failure path | Current control and remaining gate |
 | --- | --- | --- |
-| Accidental editor or malicious source | Confidential text or an inflated claim is placed in registry prose, notes, media or metadata. | Human source/wording approval and reviewed PR; typed validator and heuristic guard help catch mistakes. PF-027 must test source and artifact scans. PF-033/034 must test future JSON, CV and search surfaces. |
+| Accidental editor or malicious source | Confidential text or an inflated claim is placed in registry prose, notes, media or metadata. | Human source/wording approval and reviewed PR; typed validator and heuristic guard help catch mistakes. PF-027 tests source and artifact scans. PF-033/034 must test future JSON, CV and search surfaces. |
 | Contributor with a syntactically valid HTTPS link | An approved-looking claim links to irrelevant, changed or hostile content. | HTTPS validation blocks unsafe schemes; evidence relevance and destination still require human review before merge and periodic link checks after release. |
-| Untrusted text rendered on a page | Script execution or unsafe navigation from claim text or future imported evidence. | Current React text output is escaped and no raw HTML insertion exists. PF-027 must test unsafe rendered content and deployed CSP/headers; future trace components need their own adversarial tests. |
-| Dependency, workflow or build compromise | PR code or a package reads secrets, mutates the repo or inserts content into exported files. | A lockfile exists and root/workspace npm scripts have no lifecycle hooks. There is no CI yet. PF-027 must add read-only, pinned, secret-free PR checks and inspect the exact static artifact. |
+| Untrusted text rendered on a page | Script execution or unsafe navigation from claim text or future imported evidence. | Current React text output is escaped and no raw HTML insertion exists. PF-027 tests unsafe rendered content; deployed CSP/headers still need verification. Future trace components need their own adversarial tests. |
+| Dependency, workflow or build compromise | PR code or a package reads secrets, mutates the repo or inserts content into exported files. | A lockfile exists and root/workspace npm scripts have no lifecycle hooks. The read-only, pinned PF-027 PR workflow runs source and exported-artifact checks without repository secrets; manual review remains necessary. |
 | Local credential or private path | A key, private file, local path or opaque media reaches Git history or a build. | The root publication guard blocks selected patterns and unknown binaries, and the placeholder image has a reviewed hash. It is heuristic; manual history/source/output review remains mandatory. |
 | Provider or host outage | Visitor loses proof, sees a raw error or receives an invented model answer. | The current site is static and has no provider call. Independent backup, monitoring and live-model fail-closed behaviour remain PF-029/030/031 and later release gates. |
 

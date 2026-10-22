@@ -1,0 +1,9 @@
+[build]
+  command = "npm ci --ignore-scripts --no-audit --no-fund && npm run check && python scripts/publication_guard.py --tree apps/web/out"
+  publish = "apps/web/out"
+
+[build.environment]
+  NODE_VERSION = "22"
+  PYTHON_VERSION = "3.12"
+  NPM_FLAGS = "--ignore-scripts --no-audit --no-fund"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
