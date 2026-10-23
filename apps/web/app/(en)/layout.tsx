@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import { siteOrigin } from "@/lib/site-url";
+import "../globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: siteOrigin,
   title: "Wael Antar | Software Engineer",
   description: "Wael Antar's software engineering portfolio.",
   robots: { index: false, follow: false },

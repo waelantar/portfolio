@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { SiteFooter, SiteHeader } from "../../../components/SiteChrome";
+import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
 import {
   professionalCaseClaim,
   professionalDecisionClaim,
   professionalEpicClaim,
-} from "../../../lib/public-claims";
+} from "@/lib/public-claims";
 
 export const metadata: Metadata = {
   title: "Call analytics frontend | Wael Antar",

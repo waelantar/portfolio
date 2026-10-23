@@ -1,13 +1,21 @@
 import Image from "next/image";
-import { SiteFooter, SiteHeader } from "../components/SiteChrome";
+import type { Metadata } from "next";
+import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
 import {
   evalgateClaim,
   homeIntroClaim,
   professionalCaseClaim,
   supportingRepositoryClaims,
-} from "../lib/public-claims";
+} from "@/lib/public-claims";
 
 const professionalLead = professionalCaseClaim.statement.split(". ")[0] + ".";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/en/",
+    languages: { en: "/en/", fr: "/fr/", "x-default": "/" },
+  },
+};
 
 export default function HomePage() {
   return (
@@ -43,7 +51,7 @@ export default function HomePage() {
             </a>
             <a href="#open-source">
               <span>03 / Open source</span>
-              <strong>Merged TypeScript work</strong>
+              <strong>Merged OSS contributions</strong>
             </a>
           </nav>
         </div>

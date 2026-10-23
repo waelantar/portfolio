@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { SiteFooter, SiteHeader } from "../../../components/SiteChrome";
-import { evalgateCaseClaims, evalgateClaim } from "../../../lib/public-claims";
+import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
+import { evalgateCaseClaims, evalgateClaim } from "@/lib/public-claims";
 
 export const metadata: Metadata = {
   title: "EvalGate v1.0.0 | Wael Antar",
