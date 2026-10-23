@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { SiteFooter, SiteHeader } from "../../../components/SiteChrome";
+import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
 import {
   openSourceClaims,
   supportingRepositoryClaims,
-} from "../../../lib/public-claims";
+} from "@/lib/public-claims";
 
 export const metadata: Metadata = {
   title: "Merged open-source contributions | Wael Antar",

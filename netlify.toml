@@ -7,3 +7,12 @@
   PYTHON_VERSION = "3.12"
   NPM_FLAGS = "--ignore-scripts --no-audit --no-fund"
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
+
+# Only the entrance path uses an IP-country hint. Every locale path stays direct.
+# No rule matches unknown countries, so the existing /index.html serves English.
+[[redirects]]
+  from = "/"
+  to = "/fr/"
+  status = 302
+  force = true
+  conditions = {Country = ["fr"]}

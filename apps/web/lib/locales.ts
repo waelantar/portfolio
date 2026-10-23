@@ -6,7 +6,15 @@ export const targetLocales = ["en", "fr", "de", "nl", "es", "pt"] as const;
 export type TargetLocale = (typeof targetLocales)[number];
 
 export const defaultLocale = "en" as const satisfies TargetLocale;
-export const activeLocales = ["en"] as const satisfies readonly TargetLocale[];
+export const activeLocales = [
+  "en",
+  "fr",
+] as const satisfies readonly TargetLocale[];
+export type ActiveLocale = (typeof activeLocales)[number];
+
+export function homePath(locale: ActiveLocale): string {
+  return `/${locale}/`;
+}
 
 /** First-visit IP-country candidates for future reviewed routes. Omitted countries use English. */
 export const countryLocaleCandidates = {
